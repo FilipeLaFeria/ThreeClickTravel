@@ -9,7 +9,13 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "bootstrap";
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
+
 import 'mapbox-gl/dist/mapbox-gl.css';
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -22,6 +28,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 document.addEventListener('turbolinks:load', () => {
 
 })
+
 
 import { initMapbox } from '../plugins/init_mapbox';
 
