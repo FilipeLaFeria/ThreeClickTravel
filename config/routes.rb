@@ -1,3 +1,17 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+
+  resources :profiles, only: %i[show new create update destroy]
+
+  resources :bookings, only: %i[index show new create destroy]
+
+  resources :ratings, only: %i[show new create update destroy]
+
+  resources :offers, only: %i[index show]
+
+  resources :destinations, only: %i[index]
+
+  resources :accomodations, only: %i[new create]
+
+  resources :flights, only: %i[new create]
 end
