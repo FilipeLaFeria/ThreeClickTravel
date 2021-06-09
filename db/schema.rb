@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_161149) do
+ActiveRecord::Schema.define(version: 2021_06_09_113713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 2021_06_08_161149) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["offer_id"], name: "index_bookings_on_offer_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "definitions", force: :cascade do |t|
+    t.date "date"
+    t.integer "budget"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "travellers"
+    t.index ["user_id"], name: "index_definitions_on_user_id"
   end
 
   create_table "destinations", force: :cascade do |t|
@@ -60,19 +70,6 @@ ActiveRecord::Schema.define(version: 2021_06_08_161149) do
     t.index ["destination_id"], name: "index_offers_on_destination_id"
   end
 
-  create_table "profiles", force: :cascade do |t|
-    t.string "username"
-    t.string "first_name"
-    t.string "last_name"
-    t.date "date"
-    t.integer "budget"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "passenger", default: 1
-    t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
-
   create_table "ratings", force: :cascade do |t|
     t.bigint "booking_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -88,15 +85,18 @@ ActiveRecord::Schema.define(version: 2021_06_08_161149) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "bookings", "offers"
   add_foreign_key "bookings", "users"
+  add_foreign_key "definitions", "users"
   add_foreign_key "destinations", "accomodations"
   add_foreign_key "destinations", "flights"
   add_foreign_key "offers", "destinations"
-  add_foreign_key "profiles", "users"
   add_foreign_key "ratings", "bookings"
 end
