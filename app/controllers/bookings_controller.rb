@@ -1,6 +1,9 @@
 class BookingsController < ApplicationController
   #before_action :set_booking, only: %i[show destroy]
 
+  #def index
+  #end
+
   #def show
   #end
 
@@ -10,7 +13,7 @@ class BookingsController < ApplicationController
 
   #def delete
    # booking.destroy
-    #redirect_to path, notice: "Your booking was deleted successfully!"
+    #redirect_to path?????, notice: "Your booking was deleted successfully!"
   #end
 
  #private
@@ -20,6 +23,3 @@ class BookingsController < ApplicationController
   #end
 
 end
-
-
-

@@ -21,14 +21,14 @@ class HotelsService
       # ENV['RAPID_API_KEY']
       result = JSON.parse(response.read_body)
       destination_id = result['suggestions'][0]['entities'][0]['destinationId']
-      p destination_id
+      destination_id
       return destination_id
   end
 
 
   def call_properties(location,adults,start_date,end_date)
     id = HotelsService.call_location(location)
-    url = URI("https://hotels4.p.rapidapi.com/properties/list?adults1=#{adults}&pageNumber=1&destinationId=#{id}&pageSize=25&checkOut=#{end_date}&checkIn=#{start_date}&sortOrder=PRICE&locale=en_US&currency=USD")
+    url = URI("https://hotels4.p.rapidapi.com/properties/list?adults1=#{adults}&pageNumber=1&destinationId=#{id}&pageSize=25&checkOut=#{end_date}&checkIn=#{start_date}&sortOrder=PRICE&locale=en_US&currency=EUR")
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -40,12 +40,20 @@ class HotelsService
     response = http.request(request)
     result = JSON.parse(response.read_body)
     #### code to get the hotels
+    hotel_properties = []
+    result["data"]["body"]["searchResults"]["results"].each do |hotel|
+
+      hotel_properties << {name: hotel["name"], price: hotel["ratePlan"]["price"]["exactCurrent"].to_i, address: hotel["streetAddress"], rating: hotel["guestReviews"]["rating"].to_i}
+    end
+    p hotel_properties
 
   end
 end
 
 
-HotelsService.call_location("Porto")
+#HotelsService.call_location("Porto")
+hotel1 = HotelsService.new
+hotel1.call_properties("Porto","1","2021-06-22","2021-07-20")
 
 
 
