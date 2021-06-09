@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  root to: 'pages#home'
 
-  resources :profiles, only: %i[show new create update destroy]
+  resources :definitions, only: %i[show new create update destroy]
 
   resources :bookings, only: %i[index show new create destroy]
 
