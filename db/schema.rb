@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_113713) do
+ActiveRecord::Schema.define(version: 2021_06_09_141708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accomodations", force: :cascade do |t|
+  create_table "accommodations", force: :cascade do |t|
     t.integer "price"
-    t.string "location"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "rating"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -33,7 +35,8 @@ ActiveRecord::Schema.define(version: 2021_06_09_113713) do
   end
 
   create_table "definitions", force: :cascade do |t|
-    t.date "date"
+    t.date "start_date"
+    t.date "end_date"
     t.integer "budget"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -43,11 +46,14 @@ ActiveRecord::Schema.define(version: 2021_06_09_113713) do
   end
 
   create_table "destinations", force: :cascade do |t|
-    t.bigint "accomodation_id", null: false
+    t.bigint "accommodation_id", null: false
     t.bigint "flight_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["accomodation_id"], name: "index_destinations_on_accomodation_id"
+    t.string "city_name"
+    t.string "country_name"
+    t.string "airport_name"
+    t.index ["accommodation_id"], name: "index_destinations_on_accommodation_id"
     t.index ["flight_id"], name: "index_destinations_on_flight_id"
   end
 
@@ -57,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_113713) do
     t.string "flight_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "destination"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -95,7 +102,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_113713) do
   add_foreign_key "bookings", "offers"
   add_foreign_key "bookings", "users"
   add_foreign_key "definitions", "users"
-  add_foreign_key "destinations", "accomodations"
+  add_foreign_key "destinations", "accommodations"
   add_foreign_key "destinations", "flights"
   add_foreign_key "offers", "destinations"
   add_foreign_key "ratings", "bookings"
