@@ -6,6 +6,6 @@ class Definition < ApplicationRecord
   private
 
   def destination_fill
-    DestinationsfillJob.perform_now(self.price, self.start_date)
+    DestinationsfillJob.perform_now(self.budget, self.start_date)
   end
 end
