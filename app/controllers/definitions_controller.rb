@@ -12,9 +12,9 @@ class DefinitionsController < ApplicationController
     @definition = Definition.new(definition_params)
     @definition.user = current_user
     if @definition.save
-      redirect_to root_path, notice: 'Definition was successfully added'
+      redirect_to destinations_path, notice: 'Definition was successfully added'
     else
-      render :new
+      redirect_to root_path, notice: 'All fields must be filled!'
     end
   end
 
@@ -25,7 +25,7 @@ class DefinitionsController < ApplicationController
     if @definition.update(definition_params)
       redirect_to destinations_path, notice: 'Definition was successfully updated'
     else
-      render "pages/home", notice: '#{}'
+      render "pages/home"
     end
   end
 
@@ -41,6 +41,6 @@ class DefinitionsController < ApplicationController
   end
 
   def definition_params
-    params.require(:definition).permit(:username, :first_name, :last_name, :date, :budget)
+    params.require(:definition).permit(:username, :first_name, :last_name, :start_date, :end_date, :budget, :travellers)
   end
 end
