@@ -1,23 +1,32 @@
 <div class="main-container">
-  <div class="trail">
-
+  <div class="container">
+    <div class="trail">
+      <div class="trail-circle"><h1>1</h1></div>
+      <div class="trail-circle"><h1>2</h1></div>
+      <div class="trail-circle"><h1>3</h1></div>
+    </div>
   </div>
-  <div class="adjustment-bar">
-
+  <div class="container">
+    <div class="adjustment-bar">
+      <h1>Placeholder</h1>
+    </div>
   </div>
+  <div class="container">
 
   <div class="cards">
 
-    <% @destinations.first(3).each_with_index do |destination, index| %>
+    <% @destinations.sample(3).each_with_index do |destination, index| %>
+    <%= link_to destination_offers_path(destination), class:'text-decoration-none' do %>
       <div class="card-destination-full">
         <div class="card-destinations">
           <img src="https://source.unsplash.com/user/erondu" alt="City Photo">
           <span class="card-destinations-number badge bg-danger"><h3><%= index + 1 %></h3></span>
         </div>
         <div class="card-destinations-infos">
-          <h2></h2>
+          <h2><%= destination.flight.city_name %>, <%= destination.flight.country_name %></h2>
         </div>
       </div>
+    <% end %>
     <% end %>
 
   </div>
@@ -26,6 +35,6 @@
     <button class="btn btn-danger">GIVE ME MORE SUGGESTIONS</button>
   </div>
 </div>
-
+</div>
 
 
