@@ -8,11 +8,11 @@ Rails.application.routes.draw do
 
   resources :ratings, only: %i[show new create update destroy]
 
-  resources :offers, only: %i[index show]
-
-  resources :destinations, only: %i[index]
+  resources :destinations, only: %i[index] do
+    resources :offers, only: %i[index show]
+  end
 
   resources :accomodations, only: %i[new create]
 
   resources :flights, only: %i[new create]
-end
+ end
