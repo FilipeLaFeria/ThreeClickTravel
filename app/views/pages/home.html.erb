@@ -1,14 +1,42 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('amsterdam.jpg') %>)">
-  <h1>YOUR NEXT DESTINATION THREE CLICKS AWAY</h1>
-  <h3>Define a budget, pick a destination and book your trip</h3>
- </div>
+<div class="main-container">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(<%= asset_path('amsterdam.jpg') %>)">
+    <h1>Your next destination three clicks away</h1>
+    <h3>Define a budget, pick a destination and book your trip</h3>
+      <%= simple_form_for @definition  do |f| %>
+        <div class="landing-form">
+          <%= f.input :budget, as: :integer, label: false, placeholder: "How much do you wanna spend?" %>
+          <%= f.input :start_date, as: :string, required: false, label: false, input_html: {class: "datepicker"}, placeholder: "Depart" %>
+          <%= f.input :end_date, as: :string, required: false, label: false, input_html: {class: "datepicker"}, placeholder: "Return" %>
+          <%= f.input :travellers, as: :integer, label: false, placeholder: "Number of travellers" %>
+          <%= f.button :submit, "Action", class: "btn btn-danger"%>
+        </div>
+      <% end %>
+   </div>
 
-<div class="intro">
-  <h2>WANNA KNOW HOW IT WORKS?</h2>
-  <div class="cards-grid">
-    <div class="card-landing">
-
-      <h3>Define a Budget</h3>
+  <div class="intro">
+    <h2>Wanna know how it works?</h2>
+    <div class="landing-cards-grid">
+      <div class="landing-card">
+        <h3>Define a Budget</h3>
+        <div class="landing-card-details">
+          <p>Tell us how much you want to spend on transportation and accommodation. Also, pick the desired date and if you’re travelling alone or with someone.</p>
+          <%= image_tag("budget_1.PNG", :alt => "Budget") %>
+        </div>
+      </div>
+      <div class="landing-card">
+        <h3>Pick a Destination</h3>
+        <div class="landing-card-details">
+          <p>Based on what your budget and dates we’ll show you 3 possible destinations. Pick one, and then just choose a convenient flight and a nice accommodation.</p>
+          <%= image_tag("destination_1.PNG", :alt => "Destination") %>
+        </div>
+      </div>
+      <div class="landing-card">
+        <h3>Book your Trip</h3>
+        <div class="landing-card-details">
+          <p>After confirming all the details you can book your flight and accommodation directly with the carrier and hotel. You’ll receive a confirmation email and you’re good to go.</p>
+          <%= image_tag("booking_1.PNG", :alt => "Booking") %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
