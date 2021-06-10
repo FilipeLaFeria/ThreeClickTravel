@@ -1,0 +1,33 @@
+.landing-cards-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.landing-card {
+  padding: 16px;
+  width: 360px;
+  padding: 20px;
+}
+
+.landing-card h3 {
+  font-size: 25px;
+  color: $red;
+  font-weight: bold;
+  font-family: "Bebas Neue"
+}
+
+.landing-card-details {
+  display: flex;
+  text-align: left;
+  padding: 1.5px;
+}
+
+.landing-card-details p {
+  color: #C4C4C4;
+  font-weight: lighter;
+  font-family: "Roboto"
+}
+
+.landing-card-details img {
+  height: 100px;
+}
