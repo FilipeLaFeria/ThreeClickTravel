@@ -24,11 +24,11 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
-  initMapbox();
+
 });
 
-// document.addEventListener('turbolinks:load', () => {
-//   if (document.querySelector(".offers_index")) {
-
-//   }
-// });
+document.addEventListener('turbolinks:load', () => {
+  if (document.querySelector(".offers_index")) {
+    initMapbox();
+  }
+});
