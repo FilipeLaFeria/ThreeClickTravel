@@ -1,0 +1,18 @@
+.trail {
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+
+.trail-circle {
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ background-color: $red;
+}
+
+.trail-circle h1 {
+ color: white;
+ text-align: center;
+ padding: 10px 20px;
+}
