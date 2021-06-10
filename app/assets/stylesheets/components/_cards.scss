@@ -1,5 +1,42 @@
+.card-offer {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
 
-.cards {
+.card-offer img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-offer h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-offer p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-offer .card-offer-infos {
+  padding: 16px;
+}
+
+.card-grid {
+  height: 400px;
+}
+
+.cards-destinations-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
@@ -16,7 +53,6 @@
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
-
 }
 
 .card-destinations-number {
@@ -32,13 +68,12 @@
   background-color: $red;
   }
 
-  .card-destinations-number .badge .bg-danger > h3 {
+.card-destinations-number .badge .bg-danger > h3 {
   position: relative;
   font-size: 24px;
   font-weight: bold;
   font-family: $headers-font;
 }
-
 
 .card-destinations-infos > h2 {
   font-size: 30px;
@@ -64,9 +99,4 @@
   display: flex;
   justify-content: center;
   text-justify: center;
-
 }
-
-
-
-
