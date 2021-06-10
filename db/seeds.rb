@@ -25,13 +25,13 @@ hotel_budapest_3 = Accommodation.create!(name: "Orexiam", address: "Vérhalom, B
 puts "Landing all flights..."
 Flight.destroy_all
 
-flight_madrid_1 = Flight.create!(company: "Easyjet", flight_number: "EJU7611", destination: "Madrid, Spain", departure: "10:00", duration: "1h 20m", price: "20")
-flight_madrid_2 = Flight.create!(company: "TAP", flight_number: "TP1018", destination: "Madrid, Spain", departure: "13:15", duration: "1h 15m", price: "20")
+flight_madrid_1 = Flight.create!(company: "Easyjet", flight_number: "EJU7611", destination: "Madrid, Spain", start_date: "2021-06-11", departure: "10:00", duration: "1h 20m", price: "20")
+flight_madrid_2 = Flight.create!(company: "TAP", flight_number: "TP1018", destination: "Madrid, Spain", start_date: "2021-06-11", departure: "13:15", duration: "1h 15m", price: "20")
 
-flight_london_1 = Flight.create!(company: "Easyjet", flight_number: "EJU7611", destination: "London, UK", departure: "20:00", duration: "1h 20m", price: "60")
-flight_london_2 = Flight.create!(company: "Easyjet", flight_number: "EJU7611", destination: "London, UK", departure: "16:20", duration: "1h 20m", price: "79")
+flight_london_1 = Flight.create!(company: "Easyjet", flight_number: "EJU7611", destination: "London, UK", start_date: "2021-06-11", departure: "20:00", duration: "1h 20m", price: "60")
+flight_london_2 = Flight.create!(company: "Easyjet", flight_number: "EJU7611", destination: "London, UK", start_date: "2021-06-11", departure: "16:20", duration: "1h 20m", price: "79")
 
-flight_budapest_1 = Flight.create!(company: "Ryanair", flight_number: "EJU7611", destination: "Budapest, Hungary", departure: "14:15", duration: "3h 35m", price: "92")
-flight_budapest_2 = Flight.create!(company: "Easyjet", flight_number: "EJU7611", destination: "Budapest, Hungary", departure: "19:05", duration: "3h 20m", price: "125")
+flight_budapest_1 = Flight.create!(company: "Ryanair", flight_number: "EJU7611", destination: "Budapest, Hungary", start_date: "2021-06-11", departure: "14:15", duration: "3h 35m", price: "92")
+flight_budapest_2 = Flight.create!(company: "Easyjet", flight_number: "EJU7611", destination: "Budapest, Hungary", start_date: "2021-06-11", departure: "19:05", duration: "3h 20m", price: "125")
 
 puts "Done!"
