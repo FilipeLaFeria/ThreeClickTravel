@@ -1,6 +1,6 @@
 class AccomodationsController < ApplicationController
 
-  # #def create
+  def create
   #   @accomodation = Accomodation.new(accomodation_params)
   #   @accomodation.user = current_user
   #   if @accomodation.save

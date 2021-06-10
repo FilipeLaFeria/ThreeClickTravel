@@ -1,5 +1,5 @@
 class DestinationsController < ApplicationController
   def index
-    @destinations = Destination.all.first(3)
+    @destinations = Destination.All.first(3)
   end
 end
