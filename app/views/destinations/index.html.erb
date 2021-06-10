@@ -8,12 +8,11 @@
 
   <div class="cards">
 
-    <% @destinations.each_with_index do |destination, index| %>
+    <% @destinations.first(3).each_with_index do |destination, index| %>
       <div class="card-destination-full">
         <div class="card-destinations">
-          <img src="https://source.unsplash.com/1600x900/<% @flight.destination %>" alt="City Photo">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="card-destinations-img"/>
-          <span class="card-destinations-number badge bg-danger"><h3>#{index + 1}</h3></span>
+          <img src="https://unsplash.com/s/photos/hd-city-wallpapers-<%=  destination.city_name %>" alt="City Photo">
+          <span class="card-destinations-number badge bg-danger"><h3><%= index + 1 %></h3></span>
         </div>
         <div class="card-destinations-infos">
           <h2></h2>
