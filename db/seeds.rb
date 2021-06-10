@@ -1,3 +1,5 @@
+puts "Deleting definitions..."
+Definition.destroy_all
 puts "Deleting users..."
 User.destroy_all
 
@@ -5,6 +7,9 @@ jacome = User.create!(email: "jacome@saavedra.com", password: "123456", username
 aura = User.create!(email: "aura@lopes.com", password: "123456", username: "aural", first_name: "Aura", last_name: "Lopes")
 filipe = User.create!(email: "filipe@laferia.com", password: "123456", username: "filipel", first_name: "Filipe", last_name: "La Féria")
 joao = User.create!(email: "joao@silva.com", password: "123456", username: "joaos", first_name: "João", last_name: "Silva")
+
+definition_1 = Definition.create!(budget: 1000, start_date: "2021-06-11", end_date: "2021-06-14", travellers: 2, user: jacome)
+definition_2 = Definition.create!(budget: 600, start_date: "2021-06-11", end_date: "2021-06-15", travellers: 1, user: filipe)
 
 puts "Deleting accommodations..."
 Accommodation.destroy_all

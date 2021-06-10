@@ -1,14 +1,13 @@
-<div class="main-container">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(<%= asset_path('amsterdam.jpg') %>)">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= asset_path('amsterdam.jpg') %>)">
     <h1>Your next destination three clicks away</h1>
     <h3>Define a budget, pick a destination and book your trip</h3>
     <% if user_signed_in? %>
       <%= simple_form_for @definition  do |f| %>
         <div class="landing-form">
-          <%= f.input :budget, as: :integer, label: false, placeholder: "How much do you wanna spend?" %>
+          <%= f.input :budget, as: :integer, label: false, placeholder: "How much do you wanna spend?", input_html: {class: "landing-form-field"} %>
+          <%= f.input :travellers, as: :integer, label: false, placeholder: "Number of travellers", input_html: {class: "landing-form-field"} %>
           <%= f.input :start_date, as: :string, required: false, label: false, input_html: {class: "datepicker"}, placeholder: "Depart" %>
           <%= f.input :end_date, as: :string, required: false, label: false, input_html: {class: "datepicker"}, placeholder: "Return" %>
-          <%= f.input :travellers, as: :integer, label: false, placeholder: "Number of travellers" %>
           <%= f.button :submit, "Action", class: "btn btn-danger"%>
         </div>
       <% end %>
@@ -30,7 +29,7 @@
       <div class="landing-card">
         <h3>Pick a Destination</h3>
         <div class="landing-card-details">
-          <p>Based on what your budget and dates we’ll show you 3 possible destinations. Pick one, and then just choose a convenient flight and a nice accommodation.</p>
+          <p>Based on what your budget and dates we’ll show you <strong>3 possible</strong> destinations. Pick one, and then just choose a convenient flight and a nice accommodation.</p>
           <%= image_tag("destination_1.PNG", :alt => "Destination") %>
         </div>
       </div>
@@ -43,4 +42,3 @@
       </div>
     </div>
   </div>
-</div>

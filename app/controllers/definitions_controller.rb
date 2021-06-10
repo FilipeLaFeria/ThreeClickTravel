@@ -22,8 +22,13 @@ class DefinitionsController < ApplicationController
   end
 
   def update
-    @definition.update(definition_params)
-    redirect_to root_path, notice: 'Definition was successfully updated'
+
+    if @definition.update(definition_params)
+      redirect_to destinations_path, notice: 'Definition was successfully updated'
+    else
+      render "pages/home", notice: '#{}'
+    end
+
   end
 
   def destroy
