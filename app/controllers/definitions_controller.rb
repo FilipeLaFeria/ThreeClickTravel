@@ -25,7 +25,7 @@ class DefinitionsController < ApplicationController
     if @definition.update(definition_params)
       redirect_to destinations_path, notice: 'Definition was successfully updated'
     else
-      render "pages/home"
+      redirect_to root_path, notice: 'All fields must be filled!'
     end
   end
 
