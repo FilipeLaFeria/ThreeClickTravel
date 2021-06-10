@@ -35,3 +35,68 @@
 .card-grid {
   height: 400px;
 }
+
+.cards-destinations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.card-destinations {
+  overflow: hidden;
+  background: white;
+  position: relative;
+}
+
+.card-destinations-img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-destinations-number {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  margin: 4px 400px;
+  font-weight: bold;
+  color: white;
+  background-color: $red;
+  }
+
+.card-destinations-number .badge .bg-danger > h3 {
+  position: relative;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: $headers-font;
+}
+
+.card-destinations-infos > h2 {
+  font-size: 30px;
+  font-family: $headers-font;
+  margin: 0;
+  color: $red;
+  text-align: center;
+  padding: 24px;
+}
+
+.button-suggestions {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn.btn-danger {
+  width: 400px;
+  height: 40px;
+  background: $red;
+  font-family: $headers-font;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  text-justify: center;
+}
