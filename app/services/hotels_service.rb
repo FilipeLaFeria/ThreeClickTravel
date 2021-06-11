@@ -1,10 +1,10 @@
-require 'uri'
-require 'net/http'
-require 'openssl'
-require 'open-uri'
-require 'nokogiri'
-require 'byebug'
-require 'json'
+# require 'uri'
+# require 'net/http'
+# require 'openssl'
+# require 'open-uri'
+# require 'nokogiri'
+# require 'byebug'
+# require 'json'
 
 class HotelsService
 
