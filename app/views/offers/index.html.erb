@@ -28,7 +28,7 @@
         <div class="card-grid">
 
           <div class="card-offer">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <%= image_tag "#{offer.destination.city_name.downcase}.jpg" %>
 
             <div class="card-offer-infos">
               <div><h2><%= offer.destination.city_name %></h2></div>
@@ -57,7 +57,6 @@
         </div>
       <% end %>
       </div>
-
 
       <div class="col-12 col-lg-6">
         <div id="map"

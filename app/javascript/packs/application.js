@@ -16,7 +16,6 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import "bootstrap";
-import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
