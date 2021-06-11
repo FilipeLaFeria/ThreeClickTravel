@@ -14,19 +14,30 @@
   color: white;
 }
 
-.back {
-  margin-left: -150px;
- }
-
-.fas.fas {
+.back .back-button {
   margin-top: 40px;
-  margin-left: -50px;
   color: $red;
   font-size: 30px;
 }
 
-.fas.fas:hover {
-  color: #F1B9B9;
+.back .back-button a {
+  margin-top: 40px;
+  color: $red;
+  font-size: 25px;
+  margin-bottom: 60px;
+}
+
+.back .back-button p {
+  font-family: "Roboto";
+  font-size: 25px;
 }
 
 
+.back .back-button:hover {
+  color: #F1B9B9;
+}
+
+.bottom-buttons {
+  display: flex;
+  justify-content: flex-start;
+}
