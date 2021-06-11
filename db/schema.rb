@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_06_10_150809) do
     t.bigint "flight_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "city_name"
     t.index ["accommodation_id"], name: "index_destinations_on_accommodation_id"
     t.index ["flight_id"], name: "index_destinations_on_flight_id"
   end
