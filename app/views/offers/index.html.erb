@@ -21,84 +21,33 @@
 
   <div class="container">
     <div class="row">
-    <% @offers.each do |offer| %>
 
       <div class="col-12 col-lg-6">
+      <% @offers.first(3).each do |offer| %>
+
         <div class="card-grid">
 
           <div class="card-offer">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-offer-infos">
-              <div><h2><%= offer.destination.flight.city_name %></h2></div>
 
+            <div class="card-offer-infos">
+              <div><h2><%= offer.destination.city_name %></h2></div>
               <div class="card-offer-details">
 
                 <%# <%= image_tag 'flight_icon.png' %>
                 <div class="card-offer-flight">
                   <p id="info-title">Flight details</p>
-                  <p>Easyjet - LIS/BUD</p>
-                  <p>10:30 - 1h 45m</p>
-                  <p id="info-price"><strong>Price: 100€</strong></p>
+                  <p><%= offer.destination.flight.company %></p>
+                  <p><%= offer.destination.flight.departure %> - <%= offer.destination.flight.duration %></p>
+                  <p id="info-price"><strong>Price: <%= offer.destination.flight.price %>€</strong></p>
                 </div>
 
                 <%# <%= image_tag 'flight_icon.png' %>
                 <div class="card-offer-accommodation">
                   <p id="info-title">Accommodation details</p>
-                  <p>Address</p>
-                  <p>Start Date - End Date (2 nights)</p>
-                  <p id="info-price"><strong>Price: 200€</strong></p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card-offer">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-offer-infos">
-              <div><h2>BUDAPEST</h2></div>
-
-              <div class="card-offer-details">
-                <%# <%= image_tag 'flight_icon.png' %>
-                <div class="card-offer-flight">
-                  <p id="info-title">Flight details</p>
-                  <p>Easyjet - LIS/BUD</p>
-                  <p>10:30 - 1h 45m</p>
-                  <p id="info-price"><strong>Price: 100€</strong></p>
-                </div>
-
-                <%# <%= image_tag 'flight_icon.png' %>
-                <div class="card-offer-accommodation">
-                  <p id="info-title">Accommodation details</p>
-                  <p>Address</p>
-                  <p>Start Date - End Date (2 nights)</p>
-                  <p id="info-price"><strong>Price: 200€</strong></p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card-offer">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-offer-infos">
-              <div><h2>BUDAPEST</h2></div>
-
-              <div class="card-offer-details">
-                <%# <%= image_tag 'flight_icon.png' %>
-                <div class="card-offer-flight">
-                  <p id="info-title">Flight details</p>
-                  <p>Easyjet - LIS/BUD</p>
-                  <p>10:30 - 1h 45m</p>
-                  <p id="info-price"><strong>Price: 100€</strong></p>
-                </div>
-
-                <%# <%= image_tag 'flight_icon.png' %>
-                <div class="card-offer-accommodation">
-                  <p id="info-title">Accommodation details</p>
-                  <p>Address</p>
-                  <p>Start Date - End Date (2 nights)</p>
-                  <p id="info-price"><strong>Price: 200€</strong></p>
+                  <p> <%= offer.destination.accommodation.address %> </p>
+                  <p> <%= offer.destination.accommodation.check_in %> (2 nights)</p>
+                  <p id="info-price"><strong> Price: <%= offer.destination.accommodation.price %>€</strong></p>
                 </div>
               </div>
 
@@ -106,8 +55,10 @@
           </div>
 
         </div>
+      <% end %>
       </div>
-    <% end %>
+
+
       <div class="col-12 col-lg-6">
         <div id="map"
           style="width: 100%; height: 480px;"
@@ -117,8 +68,6 @@
       </div>
 
     </div>
-
-
   </div>
 
 </div>
