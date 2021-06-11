@@ -12,12 +12,13 @@ class OffersController < ApplicationController
       }
     end
   end
+
   private
 
   def generate_offers
-    @destination = destination.find
+    @destination = destination.find(params[:id])
     3.times do
-      Offer.create(total_price: soma dos preços, destination: dest)
+      Offer.create(total_price: (@destination.flight.price + @destination.accommodation.price), destination: @destiantion.city_name)
     end
   end
 end
