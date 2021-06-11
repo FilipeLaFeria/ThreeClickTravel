@@ -1,15 +1,20 @@
 
 .btn-flat {
   color: white;
-  padding: 8px 24px;
+  padding: 18px 18px;
   border-radius: 4px;
   background: $red;
   transition: background 0.3s ease;
-  width: 400px;
+  width: 300px;
   justify-content: space-between;
  }
 
 .btn-flat:hover {
-  background: $blue;
+  background: #F1B9B9;
   color: white;
 }
+
+.fas .fa-undo {
+   width: 10px;
+   height: 10px;
+ }
