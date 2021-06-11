@@ -1,19 +1,21 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= asset_path('amsterdam.jpg') %>)">
-    <h1>Your next destination three clicks away</h1>
-    <h3>Define a budget, pick a destination and book your trip</h3>
-    <% if user_signed_in? %>
-      <%= simple_form_for @definition  do |f| %>
-        <div class="landing-form">
-          <%= f.input :budget, as: :integer, label: false, placeholder: "How much do you wanna spend?", input_html: {class: "landing-form-field"}, error: false %>
-          <%= f.input :travellers, as: :integer, label: false, placeholder: "Number of travellers", input_html: {class: "landing-form-field"}, error: false  %>
-          <%= f.input :start_date, as: :string, required: false, label: false, input_html: {class: "datepicker"}, placeholder: "Depart date", error: false  %>
-          <%= f.input :end_date, as: :string, required: false, label: false, input_html: {class: "datepicker"}, placeholder: "Return date", error: false  %>
-          <%= f.button :submit, "ACTION", class: "landing-form-button btn btn-danger"%>
-        </div>
-      <% end %>
-      <% else %>
-        <%= link_to "Get Started", new_user_session_path, class: "btn btn-primary" %>
-      <% end %>
+    <div class="banner-fields">
+      <h1>Your next destination three clicks away</h1>
+      <h3>Define a budget, pick a destination and book your trip</h3>
+      <% if user_signed_in? %>
+        <%= simple_form_for @definition  do |f| %>
+          <div class="landing-form">
+            <%= f.input :budget, as: :integer, label: false, placeholder: "How much do you wanna spend?", input_html: {class: "landing-form-field"}, error: false %>
+            <%= f.input :travellers, as: :integer, label: false, placeholder: "Number of travellers", input_html: {class: "landing-form-field"}, error: false  %>
+            <%= f.input :start_date, as: :string, required: false, label: false, input_html: {class: "datepicker"}, placeholder: "Depart date", error: false  %>
+            <%= f.input :end_date, as: :string, required: false, label: false, input_html: {class: "datepicker"}, placeholder: "Return date", error: false  %>
+            <%= f.button :submit, "ACTION", class: "landing-form-button btn btn-danger"%>
+          </div>
+        <% end %>
+        <% else %>
+          <%= link_to "Get Started", new_user_session_path, class: "landing-form-button btn btn-danger" %>
+        <% end %>
+      </div>
    </div>
 
   <div class="intro">
@@ -24,7 +26,7 @@
       <div class="landing-card">
         <div class="landing-card-title d-flex">
           <h3 class="mr-3 radius-number">1</h3>
-          <h3>Define a Budget </h3>
+          <h3 class="landing-card-title-text">Define a Budget </h3>
         </div>
         <div class="landing-card-details">
           <p>Tell us how much you want to spend on transportation and accommodation. Also, pick the desired date and if you’re travelling alone or with someone.</p>
@@ -34,7 +36,7 @@
       <div class="landing-card">
         <div class="landing-card-title d-flex">
           <h3 class="mr-3 radius-number">2</h3>
-          <h3>Pick a Destination</h3>
+          <h3 class="landing-card-title-text">Pick a Destination</h3>
         </div>
         <div class="landing-card-details">
           <p>Based on what your budget and dates we’ll show you <strong>3 possible</strong> destinations. Pick one, and then just choose a convenient flight and a nice accommodation.</p>
@@ -44,7 +46,7 @@
       <div class="landing-card">
         <div class="landing-card-title d-flex">
           <h3 class="mr-3 radius-number">3</h3>
-          <h3>Book your Trip</h3>
+          <h3 class="landing-card-title-text">Book your Trip</h3>
         </div>
         <div class="landing-card-details">
         <p>After confirming all the details you can book your flight and accommodation directly with the carrier and hotel. You’ll receive a confirmation email and you’re good to go.</p>

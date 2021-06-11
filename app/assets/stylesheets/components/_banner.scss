@@ -1,10 +1,14 @@
 .banner {
   background-size: cover;
   background-position: center;
-  height: 68vh;
+  height: 560px;
   text-align: left;
   padding-top: 100px;
   padding-left: 160px;
+}
+
+.banner-fields {
+  vertical-align: middle;
 }
 
 .banner h1 {
