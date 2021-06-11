@@ -1,19 +1,19 @@
 .landing-cards-grid {
   display: flex;
   justify-content: center;
+  padding: 0 30px;
 }
 
 .landing-card {
   padding: 16px;
   width: 360px;
-  padding: 20px;
 }
 
 .landing-card h3 {
   font-size: 25px;
   color: $red;
   font-weight: bold;
-  font-family: "Bebas Neue"
+  font-family: "Bebas Neue";
 }
 
 .landing-card-details {
