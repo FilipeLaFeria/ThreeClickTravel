@@ -1,13 +1,17 @@
 <div class="main-container">
-
-  <div class="container">
+ <div class="container">
     <div class="trail">
-      <div class="trail-circle"><h1>1</h1></div>
-      <div class="trail-circle"><h1>2</h1></div>
-      <div class="trail-circle"><h1>3</h1></div>
+      <div class="trail-circle-done"><h1>1</h1></div>
+      <div class="trail-circle-doing"><h1>2</h1></div>
+      <div class="trail-circle-undone"><h1>3</h1></div>
     </div>
-  </div>
+    <div class="trail">
+      <div class="trail-titles1"><h3>Set a budget<br> & Date</h3></div>
+      <div class="trail-titles2"><h3>Pick a destination</h3></div>
+      <div class="trail-titles3"><h3>Book Travel &<br> Accommodation</h3></div>
+    </div>
 
+  </div>
   <div class="container">
     <div class="cards">
       <% @destinations.sample(3).each_with_index do |destination, index| %>
@@ -20,7 +24,7 @@
               <img src="https://source.unsplash.com/user/erondu" alt="City Photo">
             </div>
             <div class="card-destinations-infos">
-              <h2><%= destination.city_name %>, <%= destination.country_name %></h2>
+              <h2><%= destination.flight.city_name %>, <%= destination.flight.country_name %></h2>
             </div>
           </div>
         <% end %>
@@ -29,6 +33,9 @@
 
     <div class= "suggestions d-flex">
      <%= link_to "GIVE ME MORE SUGGESTIONS", destinations_path, class: "btn btn-flat" %>
+    </div>
+    <div class="back">
+      <a href="javascript:history.back()"><i class="fas fa-undo"></i></a>
     </div>
   </div>
 </div>
