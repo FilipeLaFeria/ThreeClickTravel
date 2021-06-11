@@ -40,13 +40,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
+  margin-top: 10vh;
+  justify-content: center;
 }
 
-.card-destinations {
-  overflow: hidden;
-  background: white;
+
+.card-destinations .card-destinations-number {
+  position: absolute;
+}
+
+.card-destinations-number .radius-number2{
   position: relative;
 }
+
 
 .card-destinations img {
   height: 400px;
@@ -55,25 +61,6 @@
   border-radius: 5px;
 }
 
-.card-destinations-number {
-  position: absolute;
-  right: 5px;
-  top: 10px;
-  width: 5vh;
-  height: 5vh;
-  border-radius: 50%;
-  margin: 4px 400px;
-  font-weight: bold;
-  color: white;
-  background-color: $red;
-  }
-
-.card-destinations-number .badge .bg-danger > h3 {
-  position: relative;
-  font-size: 24px;
-  font-weight: bold;
-  font-family: $headers-font;
-}
 
 .card-destinations-infos > h2 {
   font-size: 30px;
@@ -84,19 +71,15 @@
   padding: 24px;
 }
 
-.button-suggestions {
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
+.radius-number2 {
+  background: $red;
+  padding: 10px 20px 10px 20px;
+  color: white !important;
+  border-radius: 50%;
+  margin: 5px 5px;
 }
 
-.btn .btn-danger {
-  width: 400px;
-  height: 40px;
-  background: $red;
-  font-family: $headers-font;
-  margin-top: 20px;
-  display: flex;
+.suggestions {
   justify-content: center;
-  text-justify: center;
+  margin-top: 10vh;
 }
