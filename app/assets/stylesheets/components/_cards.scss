@@ -1,36 +1,64 @@
+// OFFERS CARDS
+
 .card-offer {
   overflow: hidden;
-  height: 120px;
+  height: 150px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin-bottom: 1em;
+  border-radius: 5px;
 }
 
 .card-offer img {
   height: 100%;
-  width: 120px;
+  width: 140px;
   object-fit: cover;
 }
 
 .card-offer h2 {
-  font-size: 16px;
+  font-size: 30px;
+  color: $red;
   font-weight: bold;
-  margin: 0;
+  // margin-top: 8px;
+  margin-bottom: 4px;
 }
 
 .card-offer p {
   font-size: 12px;
-  line-height: 1.4;
+  font-weight: light;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
 }
 
 .card-offer .card-offer-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
   padding: 16px;
 }
+
+.card-offer-details {
+  display: flex;
+  align-items: center;
+}
+
+.card-offer-flight {
+  margin-right: 6em;
+}
+
+#info-title {
+  font-size: 16px;
+}
+
+#info-price {
+  font-size: 16px;
+}
+
+
+// DESTINATIONS CARDS
 
 .card-grid {
   height: 400px;

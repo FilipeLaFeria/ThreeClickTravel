@@ -1,18 +1,27 @@
 <div class="main-container">
+
   <div class="container">
     <div class="trail">
-      <div class="trail-circle"><h1>1</h1></div>
-      <div class="trail-circle"><h1>2</h1></div>
-      <div class="trail-circle"><h1>3</h1></div>
+      <div class="trail-circle-done"><h1>1</h1></div>
+      <div class="line1"></div>
+      <div class="trail-circle-undone"><h1>2</h1></div>
+      <div class="line2"></div>
+      <div class="trail-circle-doing"><h1>3</h1></div>
+    </div>
+    <div class="trail">
+      <div class="trail-titles1"><h3>Set a budget<br> & Date</h3></div>
+      <div class="trail-titles2"><h3>Pick a destination</h3></div>
+      <div class="trail-titles3"><h3>Book Travel &<br> Accommodation</h3></div>
     </div>
   </div>
-  <div class="container">
-    <div class="adjustment-bar">
-      <h1>Placeholder</h1>
-    </div>
-  </div>
-  <div class="container">
 
+  <div class="container">
+    <div id="header" style="margin-top: 8px; color:#D62828;">
+      <h2>Pick one offer</h2>
+    </div>
+  </div>
+
+  <div class="container">
     <div class="row">
 
       <div class="col-12 col-lg-6">
@@ -21,24 +30,79 @@
           <div class="card-offer">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-offer-infos">
-              <h2>Product name</h2>
-              <p>Product description with <strong>relevant info</strong> only.</p>
+              <div><h2>BUDAPEST</h2></div>
+
+              <div class="card-offer-details">
+
+                <%# <%= image_tag 'flight_icon.png' %>
+                <div class="card-offer-flight">
+                  <p id="info-title">Flight details</p>
+                  <p>Easyjet - LIS/BUD</p>
+                  <p>10:30 - 1h 45m</p>
+                  <p id="info-price"><strong>Price: 100€</strong></p>
+                </div>
+
+                <%# <%= image_tag 'flight_icon.png' %>
+                <div class="card-offer-accommodation">
+                  <p id="info-title">Accommodation details</p>
+                  <p>Address</p>
+                  <p>Start Date - End Date (2 nights)</p>
+                  <p id="info-price"><strong>Price: 200€</strong></p>
+                </div>
+              </div>
+
             </div>
           </div>
 
           <div class="card-offer">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-offer-infos">
-              <h2>Product name</h2>
-              <p>Product description with <strong>relevant info</strong> only.</p>
+              <div><h2>BUDAPEST</h2></div>
+
+              <div class="card-offer-details">
+                <%# <%= image_tag 'flight_icon.png' %>
+                <div class="card-offer-flight">
+                  <p id="info-title">Flight details</p>
+                  <p>Easyjet - LIS/BUD</p>
+                  <p>10:30 - 1h 45m</p>
+                  <p id="info-price"><strong>Price: 100€</strong></p>
+                </div>
+
+                <%# <%= image_tag 'flight_icon.png' %>
+                <div class="card-offer-accommodation">
+                  <p id="info-title">Accommodation details</p>
+                  <p>Address</p>
+                  <p>Start Date - End Date (2 nights)</p>
+                  <p id="info-price"><strong>Price: 200€</strong></p>
+                </div>
+              </div>
+
             </div>
           </div>
 
           <div class="card-offer">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-offer-infos">
-              <h2>Product name</h2>
-              <p>Product description with <strong>relevant info</strong> only.</p>
+              <div><h2>BUDAPEST</h2></div>
+
+              <div class="card-offer-details">
+                <%# <%= image_tag 'flight_icon.png' %>
+                <div class="card-offer-flight">
+                  <p id="info-title">Flight details</p>
+                  <p>Easyjet - LIS/BUD</p>
+                  <p>10:30 - 1h 45m</p>
+                  <p id="info-price"><strong>Price: 100€</strong></p>
+                </div>
+
+                <%# <%= image_tag 'flight_icon.png' %>
+                <div class="card-offer-accommodation">
+                  <p id="info-title">Accommodation details</p>
+                  <p>Address</p>
+                  <p>Start Date - End Date (2 nights)</p>
+                  <p id="info-price"><strong>Price: 200€</strong></p>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -47,7 +111,7 @@
 
       <div class="col-12 col-lg-6">
         <div id="map"
-          style="width: 100%; height: 400px;"
+          style="width: 100%; height: 480px;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>

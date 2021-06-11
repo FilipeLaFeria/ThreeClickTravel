@@ -4,15 +4,75 @@
   justify-content: space-between;
 }
 
-.trail-circle {
- width: 60px;
- height: 60px;
- border-radius: 50%;
- background-color: $red;
+.trail-circle-done {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background-color: #F1B9B9;
+  color: white;
 }
 
-.trail-circle h1 {
- color: white;
- text-align: center;
- padding: 10px 20px;
+.trail-circle-doing {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background-color: $red;
+  color: white;
+}
+
+.trail-circle-undone {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background-color: white;
+  border-color: $red;
+  border-style: solid;
+  border-width: 1px;
+  color: $red;
+}
+
+.trail h1 {
+  font-size: 40px;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.line1 {
+  top: 180px;
+  left: 251px;
+  width: 427px;
+  height: 47px;
+  border-bottom: 1px solid;
+  border-color: #F1B9B9;
+  position: absolute;
+}
+
+.line2 {
+  top: 180px;
+  left: 762px;
+  width: 430px;
+  height: 47px;
+  border-bottom: 1px solid;
+  border-color: $red;
+  position: absolute;
+}
+
+.trail-titles1 {
+  position: absolute;
+  left: 130px;
+  padding: 8px;
+  text-align: center;
+}
+
+.trail-titles2 {
+  position: absolute;
+  left: 620px;
+  padding: 8px;
+}
+
+.trail-titles3 {
+  position: absolute;
+  left: 1140px;
+  padding: 8px;
+  text-align: center;
 }
