@@ -9,33 +9,28 @@
   </div>
 
   <div class="container">
-    <div class="adjustment-bar">
-      <h1>Placeholder</h1>
-    </div>
-  </div>
-
-  <div class="container">
-
     <div class="cards">
       <% @destinations.sample(3).each_with_index do |destination, index| %>
-      <%= link_to destination_offers_path(destination), class:'text-decoration-none' do %>
-        <div class="card-destination-full">
-          <div class="card-destinations">
-            <img src="https://source.unsplash.com/user/erondu" alt="City Photo">
-            <span class="card-destinations-number badge bg-danger"><h3><%= index + 1 %></h3></span>
+        <%= link_to destination_offers_path(destination), class:'text-decoration-none' do %>
+          <div class="card-destination-full">
+            <div class="card-destinations">
+              <div class="card-destinations-number d-flex">
+                <h3 class="mr-3 radius-number2"><%= index + 1 %></h3>
+              </div>
+              <img src="https://source.unsplash.com/user/erondu" alt="City Photo">
+            </div>
+            <div class="card-destinations-infos">
+              <h2><%= destination.flight.city_name %>, <%= destination.flight.country_name %></h2>
+            </div>
           </div>
-          <div class="card-destinations-infos">
-            <h2><%= destination.flight.city_name %>, <%= destination.flight.country_name %></h2>
-          </div>
-        </div>
-      <% end %>
+        <% end %>
       <% end %>
     </div>
 
-    <div class="btn-suggestions">
-      <button class="btn btn-danger">GIVE ME MORE SUGGESTIONS</button>
+    <div class= "suggestions d-flex">
+     <%= link_to "GIVE ME MORE SUGGESTIONS", destinations_path, class: "btn btn-flat" %>
     </div>
-
   </div>
+</div>
 
 </div>
