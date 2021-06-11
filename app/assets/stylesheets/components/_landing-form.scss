@@ -1,13 +1,19 @@
 .landing-form-field {
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-radius: 5px;
   width: 280px;
+  border: none;
 }
 
 .datepicker {
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-radius: 5px;
   width: 280px;
+}
+
+.landing-form-button {
+  width: 140px;
+  padding: 10px;
 }

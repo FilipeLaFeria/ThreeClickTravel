@@ -12,7 +12,7 @@ class DefinitionsController < ApplicationController
     @definition = Definition.new(definition_params)
     @definition.user = current_user
     if @definition.save
-      redirect_to destinations_path, notice: 'Definition was successfully added'
+      redirect_to destinations_path, notice: 'Your travel details were successfully added'
     else
       redirect_to root_path, notice: 'All fields must be filled!'
     end
@@ -23,7 +23,7 @@ class DefinitionsController < ApplicationController
 
   def update
     if @definition.update(definition_params)
-      redirect_to destinations_path, notice: 'Definition was successfully updated'
+      redirect_to destinations_path, notice: 'Your travel details were successfully updated'
     else
       redirect_to root_path, notice: 'All fields must be filled!'
     end
@@ -31,7 +31,7 @@ class DefinitionsController < ApplicationController
 
   def destroy
     @definition.destroy
-    redirect_to root_path, notice: 'Definition was successfully destroyed'
+    redirect_to root_path, notice: 'Your travel details were successfully destroyed'
   end
 
   private
