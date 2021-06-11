@@ -27,8 +27,4 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 });
 
-// document.addEventListener('turbolinks:load', () => {
-//   if (document.querySelector(".offers_index")) {
 
-//   }
-// });
