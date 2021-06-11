@@ -1,6 +1,7 @@
 class DestinationsController < ApplicationController
   def index
-    @destinations = Destination.all
-    # @destinations= Destination.all.select("DISTINCT ON (flight_id) *")
+    # @destinations = Destination.all
+    # @destinations = Destination.select(:country_name).uniq
+    @countries = Destination.pluck(:country_name).uniq
   end
 end
