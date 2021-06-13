@@ -4,26 +4,40 @@
   justify-content: space-between;
 }
 
-.trail-circle-done {
+.trail-circle {
   width: 85px;
   height: 85px;
   border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trail h1 {
+  font-size: 40px;
+  text-align: center;
+  padding: 20px 20px;
+
+}
+
+.trail p {
+  width: 100px;
+  text-align: center;
+  align-self: auto;
+  color: black;
+}
+
+.done {
   background-color: #F1B9B9;
   color: white;
 }
 
-.trail-circle-doing {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
+.doing {
   background-color: $red;
   color: white;
 }
 
-.trail-circle-undone {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
+.undone {
   background-color: white;
   border-color: $red;
   border-style: solid;
@@ -31,48 +45,3 @@
   color: $red;
 }
 
-.trail h1 {
-  font-size: 40px;
-  text-align: center;
-  padding: 20px 20px;
-}
-
-.line1 {
-  top: 180px;
-  left: 251px;
-  width: 427px;
-  height: 47px;
-  border-bottom: 1px solid;
-  border-color: #F1B9B9;
-  position: absolute;
-}
-
-.line2 {
-  top: 180px;
-  left: 762px;
-  width: 430px;
-  height: 47px;
-  border-bottom: 1px solid;
-  border-color: $red;
-  position: absolute;
-}
-
-.trail-titles1 {
-  position: absolute;
-  left: 130px;
-  padding: 8px;
-  text-align: center;
-}
-
-.trail-titles2 {
-  position: absolute;
-  left: 620px;
-  padding: 8px;
-}
-
-.trail-titles3 {
-  position: absolute;
-  left: 1140px;
-  padding: 8px;
-  text-align: center;
-}
