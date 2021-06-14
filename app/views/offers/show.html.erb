@@ -1,0 +1,59 @@
+<div class="main-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+        <div class="trail">
+          <div class="trail-circle done">
+            <h1>1</h1>
+            <p>Set a Budget & Date</p>
+          </div>
+          <div class="trail-circle done">
+            <h1>2</h1>
+            <p>Pick a Destination</p>
+          </div>
+          <div class="trail-circle doing">
+            <h1>3</h1>
+            <p>Book Travel & Accommodation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="booking-cards">
+   <h2>Plane_logo</h2><h2>Check your flight</h2>
+   <h3>Carrier</h3>
+   <h5><%= @offer.destination.flight.company %></h5>
+   <h3>From</h3>
+   <h5>Lisbon - LIS</h5>
+   <h3>To</h3>
+   <h5><%= @offer.destination.city_name %></h5>
+   <h3>Outbound</h3>
+   <h5><%= @offer.destination.flight.start_date %></h5>
+   <h3>Inbound</h3>
+   <h5>Still needed</h5>
+   <h3>Number of passengers</h3>
+   <h5><%= current_user.definition.travellers %></h5>
+    <div class= "booking-buttons d-flex">
+      <%= link_to "Book this flight", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-booking'), class: "btn btn-flat", method: :post %>
+    </div>
+ </div>
+<div>
+   <h2>Accommodation_logo</h2><h2>Check your accommodation</h2>
+   <h3>Platform</h3>
+   <h5>Still needed</h5>
+   <h3>Location</h3>
+   <h5><%= @offer.destination.accommodation.name %></h5>
+   <h3>Address</h3>
+   <h5><%= @offer.destination.accommodation.address %></h5>
+   <h3>Check in</h3>
+   <h5><%= @offer.destination.accommodation.check_in %></h5>
+   <h3>Check out</h3>
+   <h5>Still needed</h5>
+   <h3>Number of guests</h3>
+   <h5><%= current_user.definition.travellers %></h5>
+   <div class= "booking-buttons d-flex">
+      <%= link_to "Book this hotel", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-hotel'), class: "btn btn-flat", method: :post %>
+    </div>
+  </div>
+</div>
