@@ -1,4 +1,10 @@
+
+
 <div class="main-container">
+
+<div class="btn-back my-3">
+    <%= link_to "<< Back", :back, class: "back" %>
+</div>
 
   <div class="container">
     <div class="row">
@@ -27,9 +33,6 @@
     <div id="header" style="margin-top: 8px; color:#D62828;">
       <h2>Pick one destination</h2>
     </div>
-
-    <div class="row">
-      <div class="col-12 col-lg-12">
 
         <div class="cards">
           <% @countries.sample(3).each_with_index do |country, index| %>
@@ -64,17 +67,11 @@
           <% end %>
         </div>
 
+
+      <div class= "suggestions d-flex col-12 col-lg-12">
+        <%= link_to "GIVE ME MORE SUGGESTIONS", destinations_path, class: "btn btn-flat" %>
       </div>
-    </div>
 
-    <div class= "suggestions d-flex">
-      <%= link_to "GIVE ME MORE SUGGESTIONS", destinations_path, class: "btn btn-flat" %>
     </div>
-
-    <div class="back">
-      <a href="javascript:history.back()"><i class="back-button fas fa-undo"><p>Back</p></i></a>
-    </div>
-
   </div>
 
-</div>
