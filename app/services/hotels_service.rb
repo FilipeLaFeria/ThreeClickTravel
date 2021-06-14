@@ -55,6 +55,3 @@ end
 # hotel1 = HotelsService.new
 # hotel1.call_properties("Porto","1","2021-06-22","2021-07-20")
 
-
-
-

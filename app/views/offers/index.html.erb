@@ -1,42 +1,48 @@
 <div class="main-container">
 
   <div class="container">
-    <div class="trail">
-      <div class="trail-circle-done"><h1>1</h1></div>
-      <div class="trail-circle-done"><h1>2</h1></div>
-      <div class="trail-circle-doing"><h1>3</h1></div>
-    </div>
-    <div class="trail">
-      <div class="trail-titles1"><h3>Set a budget<br> & Date</h3></div>
-      <div class="trail-titles2"><h3>Pick a destination</h3></div>
-      <div class="trail-titles3"><h3>Book Travel &<br> Accommodation</h3></div>
+    <div class="row">
+      <div class="col-12">
+
+        <div class="trail">
+          <div class="trail-circle done">
+            <h1>1</h1>
+            <p>Set a Budget & Date</p>
+          </div>
+          <div class="trail-circle done">
+            <h1>2</h1>
+            <p>Pick a Destination</p>
+          </div>
+          <div class="trail-circle doing">
+            <h1>3</h1>
+            <p>Book Travel & Accommodation</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
   <div class="container">
+
     <div id="header" style="margin-top: 8px; color:#D62828;">
       <h2>Pick one offer</h2>
     </div>
-  </div>
 
-  <div class="container">
     <div class="row">
-
       <div class="col-12 col-lg-6">
+
       <% @offers.first(3).each do |offer| %>
-
         <div class="card-grid">
-
           <div class="card-offer">
             <%= image_tag "#{offer.destination.city_name.downcase}.jpg" %>
-
             <div class="card-offer-infos">
               <div><h2><%= offer.destination.city_name %></h2></div>
               <div class="card-offer-details">
 
                 <%# <%= image_tag 'flight_icon.png' %>
                 <div class="card-offer-flight">
-                  <p id="info-title">Flight details</p>
+                  <p id="info-title">Flight</p>
                   <p><%= offer.destination.flight.company %></p>
                   <p><%= offer.destination.flight.departure %> - <%= offer.destination.flight.duration %></p>
                   <p id="info-price"><strong>Price: <%= offer.destination.flight.price %>€</strong></p>
@@ -44,18 +50,18 @@
 
                 <%# <%= image_tag 'flight_icon.png' %>
                 <div class="card-offer-accommodation">
-                  <p id="info-title">Accommodation details</p>
+                  <p id="info-title">Accommodation</p>
                   <p> <%= offer.destination.accommodation.address %> </p>
                   <p> <%= offer.destination.accommodation.check_in %> (2 nights)</p>
                   <p id="info-price"><strong> Price: <%= offer.destination.accommodation.price %>€</strong></p>
                 </div>
-              </div>
 
+              </div>
             </div>
           </div>
-
         </div>
       <% end %>
+
       </div>
 
       <div class="col-12 col-lg-6">
