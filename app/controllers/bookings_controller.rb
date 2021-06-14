@@ -19,6 +19,8 @@ class BookingsController < ApplicationController
     if @booking.nil?
       @new_booking = Booking.new(user: current_user, offer: @offer)
       @new_booking.save
+      redirect_to new_destination_offer_booking_path(@offer.destination, @offer)
+
     elsif @booking.status_flight && @booking.status_accommodation
       redirect_to destination_offer_booking_path(@offer.destination, @offer, @booking)
     elsif params[:param1] == 'btn-flight'
