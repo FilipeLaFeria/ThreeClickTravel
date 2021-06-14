@@ -34,6 +34,7 @@
 
       <% @offers.each do |offer| %>
         <div class="card-grid">
+          <%= link_to destination_offer_path(@destination,offer), class:'text-decoration-none' do %>
           <div class="card-offer">
             <%= image_tag "#{offer.destination.city_name.downcase}.jpg" %>
             <div class="card-offer-infos">
@@ -59,6 +60,7 @@
               </div>
             </div>
           </div>
+          <% end %>
         </div>
       <% end %>
 

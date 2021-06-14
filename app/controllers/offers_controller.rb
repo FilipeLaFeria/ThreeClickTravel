@@ -14,6 +14,10 @@ class OffersController < ApplicationController
     end
   end
 
+  def show
+    @offer = Offer.find(params[:id])
+  end
+
   private
 
   def generate_offers
