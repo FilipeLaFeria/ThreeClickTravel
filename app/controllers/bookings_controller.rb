@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  
   def index
     @bookings = Booking.all
   end
@@ -39,25 +40,4 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
-  # private
-
-  # def booking_params
-  #   params.require(:booking).permit(:status)
-  # end
-
-
-    #   @booking = Booking.new
-    # @offer = Offer.find(params[:offer_id])
-    # @booking.offer = @offer
-    # @booking.user = current_user
-
-    # if @booking.status_flight && @booking.status_accommodation
-    #   redirect_to destination_offer_booking_path(@offer.destination, @offer, @booking)
-    # elsif @booking.save && params[:param1] == 'btn-flight'
-    #   @booking.status_flight = true
-    #   redirect_to destination_offer_path(@offer.destination, @offer)
-    # elsif @booking.save && params[:param1] == 'btn-hotel'
-    #   @booking.status_accommodation = true
-    #   redirect_to destination_offer_path(@offer.destination, @offer)
-    # end
 end
