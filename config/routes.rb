@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :accomodations, only: %i[new create]
+  # resources :accomodations, only: %i[new create]
 
   resources :flights, only: %i[new create]
  end

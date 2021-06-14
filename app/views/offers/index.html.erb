@@ -32,7 +32,7 @@
     <div class="row">
       <div class="col-12 col-lg-6">
 
-      <% @offers.first(3).each do |offer| %>
+      <% @offers.each do |offer| %>
         <div class="card-grid">
           <%= link_to destination_offer_path(@destination,offer), class:'text-decoration-none' do %>
           <div class="card-offer">
