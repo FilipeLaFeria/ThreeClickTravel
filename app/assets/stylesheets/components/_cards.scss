@@ -13,11 +13,14 @@
 }
 
 .booking-card {
+  width: 600px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background: white;
+  margin-right: 2em;
 }
 
 .booking-card-title {
@@ -33,9 +36,10 @@
 }
 
 #booking-img img {
-  // background-size: auto;
+  background-size: contain;
   width: 800px;
-  height: 80vh;
+  height: 600px;
+  margin-left: 2em;
 }
 
 // OFFERS CARDS
