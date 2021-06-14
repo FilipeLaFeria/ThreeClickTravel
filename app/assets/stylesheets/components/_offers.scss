@@ -4,51 +4,56 @@
   padding: 20px;
   box-shadow: 0 0 2px rgba(0,0,0,0.1);
   margin: 20px;
+    i {
+      background: $red;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      color: white !important;
+      border-radius: 50%;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-size: 32px;
+    }
+    .booking-buttons {
+      margin-top: 40px;
+    }
 }
 
 .flight-offer-card-title {
-  display: flex;
+  margin-bottom: 30px;
 }
 
 .accommodation-offer-card-title {
-  display: flex;
+  margin-bottom: 30px;
 }
 
 
 .flight-offer-card {
   h3 {
     color: grey;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 1px;
-    margin-left: 15px;
+    margin-left: 20px;
   }
 
   h5 {
     color: black;
-    font-size: 20px;
-    margin-left: 15px;
+    font-size: 25px;
+    margin-left: 20px;
   }
-
-  // .booking-buttons {
-  //   align-self-center
-  // }
 }
 
 .accommodation-offer-card {
   h3 {
     color: grey;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 1px;
     margin-left: 15px;
   }
 
   h5 {
     color: black;
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 15px;
-  }
-
-  .booking-buttons {
-
   }
 }
