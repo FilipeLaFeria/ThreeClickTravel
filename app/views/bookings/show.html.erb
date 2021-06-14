@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="booking-title">
+        <h1>You're all set to go!</h1>
+        <p>You'll receive shortly a confirmation email</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+
+      <div class="booking-card">
+
+        <div class="booking-card-title">
+          <p>Enjoy your trip to </p>
+          <h3><%= @booking.offer.destination.city_name %></h3>
+        </div>
+
+        <div class="booking-card-button">
+          <%= link_to "https://en.wikipedia.org/wiki/#{@booking.offer.destination.city_name}", class: 'btn btn-booking' do %>
+            <i class="fas fa-info"></i>  Discover more about <br> <%= @booking.offer.destination.city_name %>
+          <% end %>
+        </div>
+        <div class="booking-card-button">
+          <%= link_to "https://www.timeout.com/#{@booking.offer.destination.city_name}/things-to-do/", class: 'btn btn-booking' do %>
+            <i class="fas fa-landmark"></i>  What to do in <br> <%= @booking.offer.destination.city_name %>
+          <% end %>
+        </div>
+        <div class="booking-card-button">
+          <%= link_to "https://www.timeout.com/#{@booking.offer.destination.city_name}/restaurants/", class: 'btn btn-booking' do %>
+            <i class="fas fa-utensils"></i>  Where to eat in <br> <%= @booking.offer.destination.city_name %>
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-12 col-lg-6">
+      <div>
+        <div id="booking-img">
+          <%= image_tag "#{@booking.offer.destination.city_name.downcase}.jpg" %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

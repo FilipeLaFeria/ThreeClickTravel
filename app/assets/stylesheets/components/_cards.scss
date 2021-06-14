@@ -1,3 +1,43 @@
+// BOOKING CARDS
+
+.booking-title {
+  text-align: center;
+}
+
+.booking-title h1 {
+  font-size: 64px;
+}
+
+.booking-title p {
+  font-size: 24px;
+}
+
+.booking-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+.booking-card-title {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.booking-card-button {
+  margin-bottom: 1em;
+  font-family: "Bebas Neue";
+  text-align: center;
+  font-size: 24px;
+}
+
+#booking-img img {
+  // background-size: auto;
+  width: 800px;
+  height: 80vh;
+}
+
 // OFFERS CARDS
 
 .card-offer {
@@ -21,7 +61,6 @@
   font-size: 30px;
   color: $red;
   font-weight: bold;
-  // margin-top: 8px;
   margin-bottom: 4px;
 }
 
