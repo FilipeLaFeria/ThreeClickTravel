@@ -1,6 +1,6 @@
 class Offer < ApplicationRecord
   belongs_to :destination
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :users, through: :bookings
   validates :address, presence: true
   geocoded_by :address
