@@ -28,7 +28,8 @@ ActiveRecord::Schema.define(version: 2021_06_11_134650) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.boolean "status"
+    t.boolean "status_flight", default: false
+    t.boolean "status_accommodation", default: false
     t.bigint "offer_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
