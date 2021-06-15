@@ -4,7 +4,6 @@ class DestinationsController < ApplicationController
     # @destinations = Destination.select(:country_name).uniq
 
     @countries = Destination.pluck(:country_name).uniq
-    raise
 
   end
 end
