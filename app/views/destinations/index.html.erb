@@ -1,10 +1,7 @@
-
-
 <div class="main-container">
   <div class="btn-back my-3">
     <%= link_to "<< Back", :back, class: "back" %>
   </div>
-
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -23,54 +20,39 @@
             <p>Book Travel & Accommodation</p>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
   <div class="container">
     <div id="header" style="margin-top: 8px; color:#D62828;">
       <h2>Pick one destination</h2>
     </div>
-
-        <div class="cards">
-          <% @countries.sample(3).each_with_index do |country, index| %>
-
-            <% destination = Destination.find_by(country_name: country) %>
-            <%= link_to destination_offers_path(destination), class:'text-decoration-none' do %>
-
-              <div class="card-destination-full">
-
-                <div class="card-destinations">
-                  <div class="card-destinations-number d-flex">
-                    <h3 class="mr-3 radius-number2"><%= index + 1 %></h3>
-                  </div>
-
-                  <% if destination.city_name == "Madrid" %>
-                    <%= image_tag 'madrid.jpg' %>
-                  <% elsif destination.city_name == "Budapest" %>
-                    <%= image_tag 'budapest.jpg' %>
-                  <% elsif destination.city_name == "London" %>
-                    <%= image_tag 'london.jpg' %>
-                  <% end %>
-
-
-                  <div class="card-destinations-infos">
-                    <h2><%= destination.flight.city_name %>, <%= destination.flight.country_name %></h2>
-                  </div>
-                </div>
-
+    <div class="cards">
+      <% @countries.sample(3).each_with_index do |country, index| %>
+        <% destination = Destination.find_by(country_name: country) %>
+        <%= link_to destination_offers_path(destination), class:'text-decoration-none' do %>
+          <div class="card-destination-full">
+            <div class="card-destinations">
+              <div class="card-destinations-number d-flex">
+                <h3 class="mr-3 radius-number2"><%= index + 1 %></h3>
               </div>
-
-            <% end %>
-          <% end %>
-        </div>
-
-
-      <div class= "suggestions d-flex col-12 col-lg-12">
-        <%= link_to "GIVE ME MORE SUGGESTIONS", destinations_path, class: "btn btn-flat" %>
-      </div>
-
+              <% if destination.city_name == "Madrid" %>
+                <%= image_tag 'madrid.jpg' %>
+              <% elsif destination.city_name == "Budapest" %>
+                <%= image_tag 'budapest.jpg' %>
+              <% elsif destination.city_name == "London" %>
+                <%= image_tag 'london.jpg' %>
+              <% end %>
+              <div class="card-destinations-infos">
+                <h2><%= destination.flight.city_name %>, <%= destination.flight.country_name %></h2>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class= "suggestions d-flex col-12 col-lg-12">
+      <%= link_to "GIVE ME MORE SUGGESTIONS", destinations_path, class: "btn btn-flat" %>
     </div>
   </div>
-
+</div>

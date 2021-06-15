@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   def index
     @bookings = Booking.all
   end
@@ -17,7 +16,6 @@ class BookingsController < ApplicationController
   def create
     @offer = Offer.find(params[:offer_id])
     @booking = Booking.where(user: current_user, offer: @offer).last
-
     if @booking.nil?
       @new_booking = Booking.new(user: current_user, offer: @offer)
       @new_booking.save
@@ -32,7 +30,6 @@ class BookingsController < ApplicationController
       @booking.status_accommodation = true
       @booking.save
       redirect_to new_destination_offer_booking_path(@offer.destination, @offer)
-    else
     end
   end
 
@@ -41,5 +38,4 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to bookings_path
   end
-
 end
