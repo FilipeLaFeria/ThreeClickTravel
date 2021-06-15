@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_100841) do
+ActiveRecord::Schema.define(version: 2021_06_15_111612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_06_15_100841) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "city_name"
     t.text "country_name"
+    t.integer "total_price"
     t.index ["accommodation_id"], name: "index_destinations_on_accommodation_id"
     t.index ["flight_id"], name: "index_destinations_on_flight_id"
   end
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 2021_06_15_100841) do
     t.date "start_date"
     t.text "country_name"
     t.date "end_date"
+    t.string "url"
     t.string "departure_start"
     t.string "departure_end"
   end
