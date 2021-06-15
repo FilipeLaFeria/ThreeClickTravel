@@ -59,9 +59,11 @@
   text-align: center;
   padding: 16px 24px;
   border-radius: 8px;
+  word-spacing: 5px;
 }
 
-.btn-booking :hover {
+.btn .btn-booking :hover {
   background: #F1B9B9;
   color: white;
 }
+
