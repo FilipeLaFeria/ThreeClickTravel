@@ -70,11 +70,12 @@ ActiveRecord::Schema.define(version: 2021_06_15_111612) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "city_name"
     t.text "duration"
-    t.text "departure"
     t.date "start_date"
     t.text "country_name"
     t.date "end_date"
     t.string "url"
+    t.string "departure_start"
+    t.string "departure_end"
   end
 
   create_table "offers", force: :cascade do |t|
