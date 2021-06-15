@@ -37,9 +37,9 @@
           <h3>To</h3>
           <h5><%= @offer.destination.city_name %></h5>
           <h3>Outbound</h3>
-          <h5><%= @offer.destination.flight.start_date %></h5>
+          <h5><%= @offer.destination.flight.start_date %> / <%= @offer.destination.flight.departure_start %></h5>
           <h3>Inbound</h3>
-          <h5>Still needed</h5>
+          <h5><%= @offer.destination.flight.end_date %> / <%= @offer.destination.flight.departure_end %></h5>
           <h3>Number of passengers</h3>
           <h5><%= current_user.definition.travellers %></h5>
           <div class= "booking-buttons row justify-content-center">
@@ -65,7 +65,7 @@
           <h3>Check in</h3>
           <h5><%= @offer.destination.accommodation.check_in %></h5>
           <h3>Check out</h3>
-          <h5>Still needed</h5>
+          <h5><%= @offer.destination.accommodation.check_out %></h5>
           <h3>Number of guests</h3>
           <h5><%= current_user.definition.travellers %></h5>
           <div class= "booking-buttons row justify-content-center">
