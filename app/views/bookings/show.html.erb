@@ -42,7 +42,7 @@
 
     <div class="col-12 col-lg-6">
       <div id="booking-img">
-        <%= image_tag "#{@booking.offer.destination.city_name.downcase}.jpg" %>
+        <%= image_tag @booking.offer.destination.flight.url %>
       </div>
     </div>
 
