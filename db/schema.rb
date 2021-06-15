@@ -73,9 +73,9 @@ ActiveRecord::Schema.define(version: 2021_06_15_140930) do
     t.date "start_date"
     t.text "country_name"
     t.date "end_date"
+    t.string "url"
     t.string "departure_start"
     t.string "departure_end"
-    t.string "url"
   end
 
   create_table "offers", force: :cascade do |t|
