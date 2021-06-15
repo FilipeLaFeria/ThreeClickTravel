@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_134650) do
+ActiveRecord::Schema.define(version: 2021_06_15_093433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_134650) do
     t.text "city_name"
     t.text "country_name"
     t.text "check_in"
+    t.date "check_out"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -71,6 +72,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_134650) do
     t.text "departure"
     t.date "start_date"
     t.text "country_name"
+    t.date "end_date"
   end
 
   create_table "offers", force: :cascade do |t|
