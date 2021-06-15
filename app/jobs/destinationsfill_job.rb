@@ -12,7 +12,6 @@ class DestinationsfillJob < ApplicationJob
         Destination.create(flight: flight, accommodation: accommodation, city_name: flight.city_name, country_name: flight.country_name, total_price: flight.price + accommodation.price)
       end
     end
-
-
   end
 end
+

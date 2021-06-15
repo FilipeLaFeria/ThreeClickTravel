@@ -3,7 +3,6 @@ class OffersController < ApplicationController
   def index
     @destination = Destination.find(params[:destination_id])
     @offers = @destination.offers
-
     @markers = @offers.geocoded.map do |offer|
       {
         lat: offer.latitude,
@@ -13,7 +12,6 @@ class OffersController < ApplicationController
       }
     end
   end
-
 
   private
 
