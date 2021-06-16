@@ -1,7 +1,4 @@
 <div class="main-container">
-  <div class="btn-back my-3">
-    <%= link_to "<< Back", :back, class: "back" %>
-  </div>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -55,10 +52,15 @@
         <% end %>
       <% end %>
     </div>
+
     <% if params[:param1] != 'btn-all-destinations' %>
       <div class= "suggestions d-flex col-12 col-lg-12">
+        <div class="btn-back my-3">
+          <%= link_to "<< Back", :back, class: "btn btn-flat" %>
+        </div>
         <%= link_to "GIVE ME MORE SUGGESTIONS", destinations_path(param1: 'btn-all-destinations'), class: "btn btn-flat" %>
       </div>
     <% end %>
+
   </div>
 </div>
