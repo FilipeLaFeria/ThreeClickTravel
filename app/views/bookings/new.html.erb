@@ -85,7 +85,9 @@
     </div>
       <% if !@booking.nil? && @booking.status_accommodation && @booking.status_flight %>
         <div class= "booking-buttons row justify-content-center">
-          <%= link_to "Check Out", destination_offer_booking_path(@offer.destination, @offer, @booking), class: "btn btn-flat" %>
+          <%= link_to destination_offer_booking_path(@offer.destination, @offer, @booking), class: "btn btn-flat" do %>
+            Check Out<i class="fas fa-forward"></i>
+          <% end %>
         </div>
       <% end %>
   </div>

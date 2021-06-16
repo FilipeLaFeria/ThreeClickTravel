@@ -10,7 +10,10 @@ User.destroy_all
 jacome = User.create!(email: "jacome@saavedra.com", password: "123456", username: "jacomes", first_name: "Jácome", last_name: "Saavedra", location: "Lisboa")
 aura = User.create!(email: "aura@lopes.com", password: "123456", username: "aural", first_name: "Aura", last_name: "Lopes", location: "Lisboa")
 filipe = User.create!(email: "filipe@laferia.com", password: "123456", username: "filipel", first_name: "Filipe", last_name: "La Féria", location: "Lisboa")
-joao = User.create!(email: "joao@silva.com", password: "123456", username: "joaos", first_name: "João", last_name: "Silva", location: "Lisboa")
+
+file = URI.open('https://res.cloudinary.com/dhyx17ztf/image/upload/v1623857474/joao_hl4ofq.jpg')
+joao = User.create!(email: "joao@silva.com", password: "123456", username: "JoaoS", first_name: "João", last_name: "Silva", location: "Lisboa")
+joao.photo.attach(io: file, filename: 'joao.jpg', content_type: 'image/jpg')
 
 puts "Deleting accommodations..."
 Accommodation.destroy_all

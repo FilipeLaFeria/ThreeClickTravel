@@ -1,7 +1,9 @@
 <div class="info-window">
   <div class="info-window-images">
-    <%= image_tag offer.destination.accommodation.url  %>
+  <%= cl_image_tag offer.destination.accommodation.url %>
   </div>
-  <h3><%= offer.destination.accommodation.name %></h3>
-  <h6><%= offer.address %></h6>
+  <div class="info-window-text">
+    <h3><%= offer.destination.accommodation.name %></h3>
+    <h6><%= offer.address %></h6>
+  </div>
 </div>
