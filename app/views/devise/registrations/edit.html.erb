@@ -38,6 +38,8 @@
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "location" }%>
+                  <%= f.input :photo, as: :file,
+                            input_html: { autocomplete: "photo" }%>
                 </div>
               <div class="form-actions">
                 <%= f.button :submit, "Update" %>

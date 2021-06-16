@@ -31,7 +31,12 @@
     <% end %>
     </div>
     <div class="cards">
-      <% @destinations.each_with_index do |destination, index| %>
+      <% if params[:param1] == 'btn-all-destinations' %>
+        <% @destinations_show = @destinations %>
+      <% else %>
+        <% @destinations_show = @destinations.first(3) %>
+      <% end %>
+      <% @destinations_show.each_with_index do |destination, index| %>
         <%= link_to destination_offers_path(destination), class:'text-decoration-none' do %>
           <div class="card-destination-full">
             <div class="card-destinations">
@@ -47,13 +52,15 @@
         <% end %>
       <% end %>
     </div>
-    <div class= "suggestions d-flex col-12 col-lg-6">
-      <div class="btn-back my-3">
-        <%= link_to "<< Back", :back, class: "btn btn-flat" %>
+
+    <% if params[:param1] != 'btn-all-destinations' %>
+      <div class= "suggestions d-flex col-12 col-lg-12">
+        <div class="btn-back my-3">
+          <%= link_to "<< Back", :back, class: "btn btn-flat" %>
+        </div>
+        <%= link_to "GIVE ME MORE SUGGESTIONS", destinations_path(param1: 'btn-all-destinations'), class: "btn btn-flat" %>
       </div>
-      <div class="">
-        <%= link_to "GIVE ME MORE SUGGESTIONS", destinations_path, class: "btn btn-flat" %>
-      </div>
-    </div>
+    <% end %>
+
   </div>
 </div>
