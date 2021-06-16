@@ -1,7 +1,9 @@
 puts "Deleting definitions..."
 Definition.destroy_all
+
 puts "Deleting destinations..."
 Destination.destroy_all
+
 puts "Deleting users..."
 User.destroy_all
 
@@ -92,7 +94,7 @@ hotel_o3 = Accommodation.create!(city_name: "Madrid", country_name: "Spain", nam
 
 hotel_p1 = Accommodation.create!(city_name: "Amsterdam", country_name: "Netherlands", name: "citizenM Schiphol Airport Hotel", address: "Jan Plezierweg 2, 1118 BB Schiphol", check_in: "2021-06-18", check_out:  "2021-06-21", price: "298", url: "https://unsplash.com/photos/_SD9XBRFig8")
 hotel_p2 = Accommodation.create!(city_name: "Amsterdam", country_name: "Netherlands", name: "NH Amsterdam Noord", address: "Distelkade 21, 1031 XP Amsterdam", check_in: "2021-06-18", check_out: "2021-06-21", price: "288", url: "https://unsplash.com/photos/_SD9XBRFig8")
-hotel_p3 = Accommodation.create!(city_name: "Amsterdam", country_name: "Netherlands", name: "Hotel Cornelisz", address: "Pieter Cornelisz Hooftstraat 24, 1071 BX Amsterdam", check_in: "2021-06-18", check_out: "2021-06-21", url:  "https://unsplash.com/photos/lqHCzmFCIvo")
+hotel_p3 = Accommodation.create!(city_name: "Amsterdam", country_name: "Netherlands", name: "Hotel Cornelisz", address: "Pieter Cornelisz Hooftstraat 24, 1071 BX Amsterdam", check_in: "2021-06-18", check_out: "2021-06-21", price: "270", url:  "https://unsplash.com/photos/lqHCzmFCIvo")
 
 puts "Landing all flights..."
 Flight.destroy_all
