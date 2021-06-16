@@ -22,7 +22,7 @@
             <div class="card-offer-infos">
               <div class="card-offer-title">
                 <div class="card-offer-title-city">
-                  <h2><%= offer.destination.city_name %></h2>
+                  <h2><%= @booking.offer.destination.city_name %></h2>
                 </div>
                 <div class="card-offer-title-number radius-number3">
                   <p><%= index + 1 %></p>
@@ -32,16 +32,16 @@
                 <%# <%= image_tag 'flight_icon.png' %>
                 <div class="card-offer-flight">
                   <p id="info-title">Flight</p>
-                  <p><%= offer.destination.flight.company %></p>
-                  <p><%= offer.destination.flight.departure_start %> - <%= offer.destination.flight.duration %></p>
-                  <p id="info-price"><strong>Price: <%= offer.destination.flight.price %>€</strong></p>
+                  <p><%= @booking.offer.destination.flight.company %></p>
+                  <p><%= @booking.offer.destination.flight.departure_start %> - <%= @booking.offer.destination.flight.duration %></p>
+                  <p id="info-price"><strong>Price: <%= @booking.offer.destination.flight.price %>€</strong></p>
                 </div>
                 <%# <%= image_tag 'flight_icon.png' %>
                 <div class="card-offer-accommodation">
                   <p id="info-title">Accommodation</p>
-                  <p> <%= offer.destination.accommodation.address %> </p>
-                  <p> <%= offer.destination.accommodation.check_in %> (2 nights)</p>
-                  <p id="info-price"><strong> Price: <%= offer.destination.accommodation.price %>€</strong></p>
+                  <p> <%= @booking.offer.destination.accommodation.address %> </p>
+                  <p> <%= @booking.offer.destination.accommodation.check_in %> (2 nights)</p>
+                  <p id="info-price"><strong> Price: <%= @booking.offer.destination.accommodation.price %>€</strong></p>
                 </div>
               </div>
             </div>
