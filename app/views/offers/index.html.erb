@@ -32,25 +32,23 @@
     </div>
     <div class="row">
       <div class="col-12 col-lg-6">
-      <% @offers.sample(3).each_with_index do |offer, index| %>
+      <% @offers.sample(3).each do |offer| %>
         <div class="card-grid">
-          <%= link_to new_destination_offer_booking_path(@destination,offer), class:'text-decoration-none' do %>
+          <%= link_to new_destination_offer_booking_path(@destination, offer), class:'text-decoration-none' do %>
           <div class="card-offer">
-            <%= image_tag "#{offer.destination.city_name.downcase}.jpg" %>
+            <%= image_tag offer.destination.accommodation.url %>
             <div class="card-offer-infos">
               <div class="card-offer-title">
                 <div class="card-offer-title-city">
                   <h2><%= offer.destination.city_name %></h2>
                 </div>
-                <div class="card-offer-title-number radius-number3">
-                  <p><%= index + 1 %></p>
-                </div>
+
               </div>
               <div class="card-offer-details">
                 <%# <%= image_tag 'flight_icon.png' %>
                 <div class="card-offer-flight">
                   <p id="info-title">Flight</p>
-                  <p><%= offer.destination.flight.company %></p>
+                  <p><%= offer.destination.flight.company %> - <%= offer.destination.flight.flight_number %></p>
                   <p><%= offer.destination.flight.departure_start %> - <%= offer.destination.flight.duration %></p>
                   <p id="info-price"><strong>Price: <%= offer.destination.flight.price %>€</strong></p>
                 </div>

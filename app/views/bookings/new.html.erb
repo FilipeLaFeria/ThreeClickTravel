@@ -42,11 +42,14 @@
           <h5><%= @offer.destination.flight.end_date %> / <%= @offer.destination.flight.departure_end %></h5>
           <h3>Number of passengers</h3>
           <h5><%= current_user.definition.travellers %></h5>
-          <div class= "booking-buttons row justify-content-center">
-            <%= link_to "Book Flight", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-flight'), class: "btn btn-flat", method: :post %>
-          </div>
           <% if !@booking.nil? && @booking.status_flight %>
-            <p>clicked</p>
+            <div class= "booking-buttons row justify-content-center">
+              <%= link_to "Done", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-flight'), class: "btn btn-success", method: :post %>
+            </div>
+          <% else %>
+            <div class= "booking-buttons row justify-content-center">
+              <%= link_to "Book Flight", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-flight'), class: "btn btn-flat", method: :post %>
+            </div>
           <% end %>
         </div>
       </div>
@@ -68,11 +71,14 @@
           <h5><%= @offer.destination.accommodation.check_out %></h5>
           <h3>Number of guests</h3>
           <h5><%= current_user.definition.travellers %></h5>
-          <div class= "booking-buttons row justify-content-center">
-            <%= link_to "Book Accommodation", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-hotel'), class: "btn btn-flat", method: :post  %>
-          </div>
           <% if !@booking.nil? && @booking.status_accommodation %>
-            <p>clicked</p>
+            <div class= "booking-buttons row justify-content-center">
+              <%= link_to "Done", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-flight'), class: "btn btn-success", method: :post %>
+            </div>
+          <% else %>
+            <div class= "booking-buttons row justify-content-center">
+              <%= link_to "Book Accommodation", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-hotel'), class: "btn btn-flat", method: :post  %>
+            </div>
           <% end %>
         </div>
       </div>
@@ -84,4 +90,3 @@
       <% end %>
   </div>
 </div>
-
