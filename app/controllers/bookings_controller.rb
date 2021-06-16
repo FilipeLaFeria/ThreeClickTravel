@@ -1,14 +1,14 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
-    @markers = @bookings.geocoded.map do |booking|
-      {
-        lat: booking.latitude,
-        lng: booking.longitude,
-        info_window: render_to_string(partial: 'info_window', locals: { booking: booking }),
-        image_url: helpers.asset_url('logo.ico')
-      }
-    end
+    # @markers = @bookings.geocoded.map do |booking|
+    #   {
+    #     lat: booking.offer.latitude,
+    #     lng: booking.offer.longitude,
+    #     info_window: render_to_string(partial: 'info_window', locals: { booking: booking.offer }),
+    #     image_url: helpers.asset_url('logo.ico')
+    #   }
+    # end
   end
 
   def show

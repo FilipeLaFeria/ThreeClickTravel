@@ -1,7 +1,7 @@
 class DestinationsfillJob < ApplicationJob
   queue_as :default
 
-  def perform(budget, start_date, end_date)
+  def perform(start_date, end_date)
     puts 'Deleting old destinations...'
     Destination.destroy_all
     puts 'Creating destinations...'
