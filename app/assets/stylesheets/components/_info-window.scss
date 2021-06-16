@@ -1,8 +1,12 @@
 .info-window {
-  h3 {
+  img {
+    height: 160px;
+    width: 100%;
+  }
+   h3 {
     color: $red;
   }
-}
-
-.info-window-images {
+  .info-window-text {
+    width: 100%;
+  }
 }

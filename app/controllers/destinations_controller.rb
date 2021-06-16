@@ -11,7 +11,7 @@ class DestinationsController < ApplicationController
     @destinations = Destination.where(total_price: interval)
                .order(country_name: :desc)
                .distinct_on(:country_name)
-               .limit(3)
+               .limit(6)
                .sort_by(&:total_price)
                .reverse
   end
