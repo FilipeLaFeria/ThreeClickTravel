@@ -1,7 +1,9 @@
 puts "Deleting definitions..."
 Definition.destroy_all
+
 puts "Deleting destinations..."
 Destination.destroy_all
+
 puts "Deleting users..."
 User.destroy_all
 
