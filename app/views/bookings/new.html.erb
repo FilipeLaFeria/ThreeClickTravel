@@ -43,8 +43,8 @@
           <h3>Number of passengers</h3>
           <h5><%= current_user.definition.travellers %></h5>
           <% if !@booking.nil? && @booking.status_flight %>
-            <div class= "booking-buttons row justify-content-center">
-              <%= link_to "Done", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-flight'), class: "btn btn-success", method: :post %>
+            <div class= "row justify-content-center">
+              <button type="button" class="booking-buttons row justify-content-center rounded btn btn-lg btn-secondary" disabled>Done</button>
             </div>
           <% else %>
             <div class= "booking-buttons row justify-content-center">
@@ -72,8 +72,8 @@
           <h3>Number of guests</h3>
           <h5><%= current_user.definition.travellers %></h5>
           <% if !@booking.nil? && @booking.status_accommodation %>
-            <div class= "booking-buttons row justify-content-center">
-              <%= link_to "Done", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-flight'), class: "btn btn-success", method: :post %>
+            <div class= "row justify-content-center">
+              <button type="button" class="booking-buttons row justify-content-center rounded btn btn-lg btn-secondary" disabled>Done</button>
             </div>
           <% else %>
             <div class= "booking-buttons row justify-content-center">
