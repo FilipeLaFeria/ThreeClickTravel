@@ -1,8 +1,7 @@
 class OffersController < ApplicationController
   before_action :generate_offers, only: :index
   def index
-    @destination = Destination.find(params[:destination_id])
-    @offers = @destination.offers
+    @offers = Offer.all
     @markers = @offers.geocoded.map do |offer|
       {
         lat: offer.latitude,
@@ -16,9 +15,11 @@ class OffersController < ApplicationController
   private
 
   def generate_offers
+    Offer.destroy_all
     @destination = Destination.find(params[:destination_id])
-    3.times do
-      Offer.create(total_price: (@destination.flight.price + @destination.accommodation.price), destination: @destination, date: @destination.flight.start_date, address: @destination.accommodation.address)
+    @selected_destinations = Destination.where(city_name: @destination.accommodation.city_name)
+    @selected_destinations.each do |destination|
+      Offer.create(total_price: destination.total_price, destination: destination, address: destination.accommodation.address)
     end
   end
 end
