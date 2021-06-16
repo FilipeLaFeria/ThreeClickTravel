@@ -14,7 +14,7 @@
       <div class="col-12 col-lg-6">
 
 
-      <% @bookings.each_with_index do |booking, index| %>
+      <% @bookings.each_with_index do |booking| %>
         <div class="card-grid">
           <div class="card-offer">
             <%= image_tag booking.offer.destination.accommodation.url %>
@@ -22,9 +22,6 @@
               <div class="card-offer-title">
                 <div class="card-offer-title-city">
                   <h2><%= booking.offer.destination.city_name %></h2>
-                </div>
-                <div class="card-offer-title-number radius-number3">
-                  <p><%= index + 1 %></p>
                 </div>
               </div>
               <div class="card-offer-details">
