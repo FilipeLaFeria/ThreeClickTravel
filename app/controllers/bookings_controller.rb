@@ -24,6 +24,7 @@ class BookingsController < ApplicationController
   def create
     @offer = Offer.find(params[:offer_id])
     @booking = Booking.where(user: current_user, offer: @offer).last
+
     if @booking.nil?
       @new_booking = Booking.new(user: current_user, offer: @offer)
       @new_booking.save
