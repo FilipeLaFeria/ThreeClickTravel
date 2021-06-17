@@ -36,17 +36,17 @@
 }
 
 .flight-offer-card {
+  display: flex;
+
   h3 {
     color: grey;
     font-size: 20px;
     margin-bottom: 1px;
-    margin-left: 100px;
   }
 
   h5 {
     color: black;
     font-size: 25px;
-    margin-left: 100px;
   }
   img {
     height: 100%;
@@ -54,24 +54,58 @@
     border-radius: 10px 0 0 10px;
     object-fit: cover;
   }
+
+  .flight-offer-card-infos {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+  }
 }
 
+
 .accommodation-offer-card {
+  display: flex;
+
   h3 {
     color: grey;
     font-size: 20px;
-    margin-bottom: 1px;
-    margin-left: 100px;
   }
 
   h5 {
     color: black;
     font-size: 25px;
-    margin-left: 100px;
   }
   img {
     height: 100%;
     width: 300px;
     border-radius: 10px 0 0 10px;
   }
+}
+
+.acommodation-ofer-card-infos {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+
+  .info1 {
+    max-width: 400px;
+  }
+}
+
+.image-and-info1 {
+  display: flex;
+}
+
+.info1 {
+  margin: 20px;
+}
+
+.info2 {
+  margin: 20px;
+  min-width: 200px;
+}
+
+.info2-locations {
+  display: flex;
+  justify-content: space-between;
 }

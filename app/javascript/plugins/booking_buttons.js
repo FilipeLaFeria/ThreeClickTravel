@@ -7,6 +7,7 @@ const initButtons = () => {
     ladda.stop();
     button.classList.add('success');
     button.classList.add('disabled');
+    button.innerText = 'Booked';
     button.blur();
 
     const disabledButtons = document.querySelectorAll('.success.disabled');
