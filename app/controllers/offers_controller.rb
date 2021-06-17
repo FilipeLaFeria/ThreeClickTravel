@@ -18,7 +18,6 @@ class OffersController < ApplicationController
   private
 
   def generate_offers
-    # Offer.destroy_all
 
     @destination = Destination.find(params[:destination_id])
 
