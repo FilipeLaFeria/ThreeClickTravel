@@ -1,22 +1,38 @@
 .offers-cards {
   background-color: #F6F6F6;
   border-radius: 10px;
-  padding: 20px;
   box-shadow: 0 0 2px rgba(0,0,0,0.1);
-  margin: 20px;
-    i {
-      background: $red;
-      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-      padding: 18px;
-      color: white !important;
-      border-radius: 50%;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      font-size: 34px;
-    }
+  margin-top: 10px;
     .booking-buttons {
       margin-top: 40px;
     }
+    padding-left: 0;
+}
+
+.flight-offer-card-title {
+  margin-top: 20px;
+  i {
+    background: $red;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 18px;
+    color: white !important;
+    border-radius: 50%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 34px;
+  }
+}
+
+.accommodation-offer-card-title {
+  margin-top: 40px;
+  i {
+    background: $red;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 18px;
+    color: white !important;
+    border-radius: 50%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 34px;
+  }
 }
 
 .flight-offer-card {
@@ -32,6 +48,12 @@
     font-size: 25px;
     margin-left: 100px;
   }
+  img {
+    height: 100%;
+    width: 300px;
+    border-radius: 10px 0 0 10px;
+    object-fit: cover;
+  }
 }
 
 .accommodation-offer-card {
@@ -46,5 +68,10 @@
     color: black;
     font-size: 25px;
     margin-left: 100px;
+  }
+  img {
+    height: 100%;
+    width: 300px;
+    border-radius: 10px 0 0 10px;
   }
 }
