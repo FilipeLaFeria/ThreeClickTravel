@@ -3,11 +3,11 @@
     <div class="row">
       <div class="col-12">
         <div class="trail">
-          <div class="trail-circle done">
+          <div class="trail-circle doing">
             <h1>1</h1>
             <p>Pick a Destination</p>
           </div>
-          <div class="trail-circle doing">
+          <div class="trail-circle undone">
             <h1>2</h1>
             <p>Select Flight & Accommodation</p>
           </div>
@@ -50,15 +50,15 @@
         <% end %>
       <% end %>
     </div>
-
-    <% if params[:param1] != 'btn-all-destinations' %>
-      <div class= "suggestions d-flex col-12 col-lg-12">
-        <div class="btn-back my-3">
-          <%= link_to "<< Back", :back, class: "btn btn-flat" %>
-        </div>
-        <%= link_to "GIVE ME MORE SUGGESTIONS", destinations_path(param1: 'btn-all-destinations'), class: "btn btn-flat" %>
-      </div>
-    <% end %>
-
   </div>
+
+  <div class="buttons">
+    <%= link_to "<< Back", :back, class: "button-secondary" %>
+    <% if params[:param1] != 'btn-all-destinations' %>
+
+      <%= link_to "MORE SUGGESTIONS", destinations_path(param1: 'btn-all-destinations'), class: "button-primary" %>
+
+    <% end %>
+  </div>
+
 </div>

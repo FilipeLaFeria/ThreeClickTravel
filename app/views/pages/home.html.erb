@@ -9,7 +9,7 @@
             <%= f.input :travellers, as: :integer, label: false, placeholder: "Number of travellers", input_html: {class: "landing-form-field"}, error: false  %>
             <%= f.input :start_date, as: :string, required: false, label: false, input_html: {class: "datepicker"}, placeholder: "Depart date", error: false  %>
             <%= f.input :end_date, as: :string, required: false, label: false, input_html: {class: "datepicker"}, placeholder: "Return date", error: false  %>
-            <%= f.button :submit, "ACTION", class: "landing-form-button btn btn-danger"%>
+            <%= f.button :submit, "Let's Travel!", class: "landing-form-button btn btn-danger"%>
           </div>
         <% end %>
         <% else %>

@@ -1,69 +1,49 @@
-.btn-flat {
-  color: white;
-  padding: 18px 18px;
-  border-radius: 4px;
-  background: $red;
-  transition: background 0.3s ease;
-  width: 300px;
-  justify-content: space-between;
- }
+// Buttons
 
-.btn-flat:hover {
-  background: #F1B9B9;
-  color: white;
-}
-
-
-.btn-back {
-  margin-top: 40px;
-  color: #F1B9B9;
-  font-size: 50px;
-  margin-left: 30px;
- }
-
-.back .back-button:hover {
-  color: $red;
-}
-
-.back  {
-  color: #F1B9B9;
-  font-size: 25px;
+.buttons {
   display: flex;
-  align-items: flex-end;
+  justify-content: center;
+  align-content: space-evenly;
+  margin-bottom: 50px;
 }
 
-.back:hover  {
-  color: $red;
-  text-decoration: none;
-}
-
-.back:hover {
-  color: $red;
-  text-decoration: none;
-}
-
-.bottom-buttons {
-  display: flex;
-  justify-content: flex-start;
-}
-
-
-// BOOKING BUTTONS
-
-.btn-booking {
+.button-primary {
   width: 250px;
-  background: $red;
-  color: white;
+  margin: 16px 16px;
+  padding: 16px 24px;
+  border-radius: 8px;
   font-family: "Bebas Neue";
   font-size: 24px;
   text-align: center;
-  padding: 16px 24px;
-  border-radius: 8px;
   word-spacing: 5px;
+  text-decoration: none;
+  background-color: $red;
+  color: white;
+  // box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.2);
 }
 
-.btn .btn-booking :hover {
+.button-primary:hover {
   background: #F1B9B9;
+  text-decoration: none;
   color: white;
 }
 
+.button-secondary {
+  width: 250px;
+  margin: 16px 16px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-family: "Bebas Neue";
+  font-size: 24px;
+  text-align: center;
+  word-spacing: 5px;
+  text-decoration: none;
+  background-color: #F1B9B9;
+  color: white;
+}
+
+.button-secondary:hover {
+  background: $red;
+  text-decoration: none;
+  color: white;
+}
