@@ -39,7 +39,7 @@ const initButtons = () => {
         body: JSON.stringify({ booking: { status_flight: true }})
       });
 
-      setTimeout(() => loadButton(laddaFlight, flightBtn), 1000);
+      setTimeout(() => loadButton(laddaFlight, flightBtn), 1300);
     });
 
     hotelBtn.addEventListener('click', () => {
@@ -54,7 +54,7 @@ const initButtons = () => {
         body: JSON.stringify({ booking: { status_accommodation: true }})
       });
 
-      setTimeout(() => loadButton(laddaHotel, hotelBtn), 1000);
+      setTimeout(() => loadButton(laddaHotel, hotelBtn), 1300);
     });
   }
 }
