@@ -1,17 +1,20 @@
 <div class="main-container">
-
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="trail">
-          <div class="trail-circle done">
-            <h1>1</h1>
-            <p>Pick a Destination</p>
-          </div>
-          <div class="trail-circle done">
-            <h1>2</h1>
-            <p>Select Flight & Accommodation</p>
-          </div>
+          <%= link_to destinations_path, class:'text-decoration-none' do %>
+            <div class="trail-circle done">
+              <h1>1</h1>
+              <p>Pick a Destination</p>
+            </div>
+          <% end %>
+          <%= link_to destination_offers_path, class:'text-decoration-none' do %>
+            <div class="trail-circle done">
+              <h1>2</h1>
+              <p>Select Flight & Accommodation</p>
+            </div>
+          <% end %>
           <div class="trail-circle doing">
             <h1>3</h1>
             <p>Check Out</p>
@@ -20,74 +23,79 @@
       </div>
     </div>
   </div>
-
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="card offers-cards col-12 col-lg-5">
+    <div class="row justify-content-start">
+      <div class="flight-offer-card-title row justify-content-start ml-1 mb-4">
+        <i class="fas fa-plane"></i>
+        <h2 class="ml-3 mt-3">Your Flight</h2>
+      </div>
+      <div class="card offers-cards col-12 col-lg-10">
         <div class="flight-offer-card">
-          <div class="flight-offer-card-title row justify-content-start ml-1 mb-4">
-            <i class="fas fa-plane"></i>
-            <h2 class="ml-3 mt-3">Your Flight</h2>
+          <div class="flight-offer-card-content d-flex">
+            <div class="flight-offer-card-content-image">
+              <%= image_tag @offer.destination.flight.url %>
+            </div>
+            <div class="flight-offer-card-content-text">
+              <h3>Carrier</h3>
+              <h5><%= @offer.destination.flight.company %></h5>
+              <h3>From</h3>
+              <h5>Lisbon - LIS</h5>
+              <h3>To</h3>
+              <h5><%= @offer.destination.city_name %></h5>
+              <h3>Outbound</h3>
+              <h5><%= @offer.destination.flight.start_date %> / <%= @offer.destination.flight.departure_start %></h5>
+              <h3>Inbound</h3>
+              <h5><%= @offer.destination.flight.end_date %> / <%= @offer.destination.flight.departure_end %></h5>
+              <h3>Number of passengers</h3>
+              <h5><%= current_user.definition.travellers %></h5>
+            </div>
           </div>
-          <h3>Carrier</h3>
-          <h5><%= @offer.destination.flight.company %></h5>
-          <h3>From</h3>
-          <h5>Lisbon - LIS</h5>
-          <h3>To</h3>
-          <h5><%= @offer.destination.city_name %></h5>
-          <h3>Outbound</h3>
-          <h5><%= @offer.destination.flight.start_date %> / <%= @offer.destination.flight.departure_start %></h5>
-          <h3>Inbound</h3>
-          <h5><%= @offer.destination.flight.end_date %> / <%= @offer.destination.flight.departure_end %></h5>
-          <h3>Number of passengers</h3>
-          <h5><%= current_user.definition.travellers %></h5>
-          <% if !@booking.nil? && @booking.status_flight %>
-            <div class= "row justify-content-center">
-              <button type="button" class="booking-buttons row justify-content-center rounded btn btn-lg btn-secondary" disabled>Done</button>
-            </div>
-          <% else %>
-            <div class= "booking-buttons row justify-content-center">
-              <%= link_to "Book Flight", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-flight'), class: "btn btn-flat", method: :post %>
-            </div>
-          <% end %>
         </div>
       </div>
-      <div class="card offers-cards col-12 col-lg-5">
+
+      <div class="flight-offer-card-content-button">
+        <%= link_to "Book Flight", booking_path(@booking),
+              class: "btn button-primary",
+              method: :put,
+              id: 'btn-flight',
+              data: { style: "expand-right" } %>
+      </div>
+
+      <div class="accommodation-offer-card-title row justify-content-start ml-1 mb-4">
+        <i class="fas fa-home"></i>
+        <h2 class="ml-3 mt-3">Your Accommodation</h2>
+      </div>
+      <div class="card offers-cards col-12 col-lg-10">
         <div class="accommodation-offer-card">
-          <div class="accommodation-offer-card-title row justify-content-start ml-1 mb-4">
-            <i class="fas fa-home"></i>
-            <h2 class="ml-3 mt-3">Your Accommodation</h2>
+          <div class="accommodation-offer-card-content d-flex">
+            <div class="accommodation-offer-card-content-image">
+              <%= image_tag @offer.destination.accommodation.room %>
+            </div>
+            <div class="accommodation-offer-card-content-text">
+              <h3>Platform</h3>
+              <h5><%= @offer.destination.accommodation.platform %></h5>
+              <h3>Location</h3>
+              <h5><%= @offer.destination.accommodation.name %></h5>
+              <h3>Address</h3>
+              <h5><%= @offer.destination.accommodation.address %></h5>
+              <h3>Check in</h3>
+              <h5><%= @offer.destination.accommodation.check_in %></h5>
+              <h3>Check out</h3>
+              <h5><%= @offer.destination.accommodation.check_out %></h5>
+              <h3>Number of guests</h3>
+              <h5><%= current_user.definition.travellers %></h5>
+            </div>
           </div>
-          <h3>Platform</h3>
-          <h5><%= @offer.destination.accommodation.platform %></h5>
-          <h3>Location</h3>
-          <h5><%= @offer.destination.accommodation.name %></h5>
-          <h3>Address</h3>
-          <h5><%= @offer.destination.accommodation.address %></h5>
-          <h3>Check in</h3>
-          <h5><%= @offer.destination.accommodation.check_in %></h5>
-          <h3>Check out</h3>
-          <h5><%= @offer.destination.accommodation.check_out %></h5>
-          <h3>Number of guests</h3>
-          <h5><%= current_user.definition.travellers %></h5>
-          <% if !@booking.nil? && @booking.status_accommodation %>
-            <div class= "row justify-content-center">
-              <button type="button" class="booking-buttons row justify-content-center rounded btn btn-lg btn-secondary" disabled>Done</button>
-            </div>
-          <% else %>
-            <div class= "booking-buttons row justify-content-center">
-              <%= link_to "Book Accommodation", destination_offer_bookings_path(@offer.destination, @offer, param1: 'btn-hotel'), class: "btn btn-flat", method: :post  %>
-            </div>
-          <% end %>
         </div>
+      </div>
+
+      <div class="accommodation-offer-card-content-button" data-show-link="<%= destination_offer_booking_path(@offer.destination, @offer, @booking) %>">
+        <%= link_to "Book Accommodation", booking_path(@booking),
+              class: "btn button-primary",
+              method: :put,
+              id: 'btn-hotel',
+              data: { style: "expand-right" } %>
       </div>
     </div>
-    <% if !@booking.nil? && @booking.status_accommodation && @booking.status_flight %>
-      <div class= "booking-buttons row justify-content-center">
-        <%= link_to destination_offer_booking_path(@offer.destination, @offer, @booking), class: "button-primary" do %>
-          Check Out <i class="fas fa-forward"></i>
-        <% end %>
-      </div>
-    <% end %>
   </div>
 </div>
