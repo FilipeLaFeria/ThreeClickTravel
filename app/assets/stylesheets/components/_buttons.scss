@@ -51,6 +51,26 @@
   color: white;
 }
 
+
+.button-vertical {
+  height: 200px;
+  // margin: 16px auto;
+  padding: 93px 16px 78px 16px;
+  border-radius: 8px;
+  font-family: "Bebas Neue";
+  font-size: 24px;
+  text-align: center;
+  word-spacing: 5px;
+  text-decoration: none;
+  background-color: $red;
+  color: white;
+}
+
+.button-vertical:hover {
+  background: #F1B9B9;
+  text-decoration: none;
+  color: white;
+
 .ladda-button[disabled],
 .ladda-button[disabled]:hover,
 .ladda-button[data-loading],
