@@ -218,3 +218,24 @@
 .suggestions {
   justify-content: center;
 }
+
+// DELETE CARDS
+
+.my_bookings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.my_bookings_page {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.grids {
+  display: flex;
+  align-items: center;
+}

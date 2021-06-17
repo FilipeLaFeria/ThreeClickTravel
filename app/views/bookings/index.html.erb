@@ -1,54 +1,54 @@
 <div class="main-container">
-  <div class="container">
+  <div class="my_bookings_page">
 
     <div id="header" style="margin-top: 8px; color:#D62828;">
       <h1>My bookings</h1>
     </div>
 
-    <div class="row">
-      <div class="col-12">
-
+    <div class="my_bookings">
       <% @bookings.each_with_index do |booking| %>
-        <div class="card-grid">
+        <div class="grids">
+          <div class="card-grid">
 
-          <div class="card-offer">
-            <%= image_tag booking.offer.destination.accommodation.url %>
-            <div class="card-offer-infos">
-              <div class="card-offer-title">
-                <div class="card-offer-title-city">
-                  <h2><%= booking.offer.destination.city_name %></h2>
-                </div>
-              </div>
-              <div class="card-offer-details">
-                <div class="card-offer-flight">
-                  <p id="info-title">Flight</p>
-                  <p><%= booking.offer.destination.flight.company %></p>
-                  <p><%= booking.offer.destination.flight.departure_start %> - <%= booking.offer.destination.flight.duration %></p>
-                  <p id="info-price"><strong>Price: <%= booking.offer.destination.flight.price %>€</strong></p>
+            <div class="card-offer">
+              <%= image_tag booking.offer.destination.accommodation.url %>
+
+              <div class="card-offer-infos">
+                <div class="card-offer-title">
+                  <div class="card-offer-title-city">
+                    <h2><%= booking.offer.destination.city_name %></h2>
+                  </div>
                 </div>
 
-                <div class="card-offer-accommodation">
-                  <p id="info-title">Accommodation</p>
-                  <p> <%= booking.offer.destination.accommodation.address %> </p>
-                  <p> <%= booking.offer.destination.accommodation.check_in %> (2 nights)</p>
-                  <p id="info-price"><strong> Price: <%= booking.offer.destination.accommodation.price %>€</strong></p>
+                <div class="card-offer-details">
+                  <div class="card-offer-flight">
+                    <p id="info-title">Flight</p>
+                    <p><%= booking.offer.destination.flight.company %></p>
+                    <p><%= booking.offer.destination.flight.departure_start %> - <%= booking.offer.destination.flight.duration %></p>
+                    <p id="info-price"><strong>Price: <%= booking.offer.destination.flight.price %>€</strong></p>
+                  </div>
+
+                  <div class="card-offer-accommodation">
+                    <p id="info-title">Accommodation</p>
+                    <p> <%= booking.offer.destination.accommodation.address %> </p>
+                    <p> <%= booking.offer.destination.accommodation.check_in %> (2 nights)</p>
+                    <p id="info-price"><strong> Price: <%= booking.offer.destination.accommodation.price %>€</strong></p>
+                  </div>
                 </div>
               </div>
+
             </div>
           </div>
+
           <div>
-            <div class="booking-card-button">
-
-              <%= link_to booking_path(booking), method: :delete, class: 'btn btn-booking' do %>
-                <i class="fas fa-trash"></i>
-              <% end %>
-            </div>
+            <%= link_to booking_path(booking), method: :delete, class: 'button-vertical' do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
           </div>
-
         </div>
+
       <% end %>
 
-      </div>
     </div>
 
   </div>
