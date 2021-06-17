@@ -23,61 +23,95 @@
       </div>
     </div>
   </div>
+
   <div class="container">
-    <div class="row justify-content-start">
-      <div class="flight-offer-card-title row justify-content-start ml-1 mb-4">
-        <i class="fas fa-plane"></i>
-        <h2 class="ml-3 mt-3">Your Flight</h2>
-      </div>
+    <div class="flight-offer-card-title row justify-content-start ml-1 mb-2">
+      <i class="fas fa-plane"></i>
+      <h2 class="ml-3 mt-3">Your Flight</h2>
+    </div>
+
+    <div class="grids">
       <div class="card offers-cards col-12 col-lg-10">
         <div class="flight-offer-card">
-          <div class="flight-offer-card-content d-flex">
-            <div class="flight-offer-card-content-image">
-              <%= image_tag @offer.destination.flight.url %>
-            </div>
-            <div class="flight-offer-card-content-text">
+          <div class="flight-offer-card-content-image">
+            <%= image_tag @offer.destination.flight.url %>
+          </div>
+
+          <div class="flight-offer-card-infos">
+            <div class="info1">
               <h3>Carrier</h3>
               <h5><%= @offer.destination.flight.company %></h5>
-              <h3>From</h3>
-              <h5>Lisbon - LIS</h5>
-              <h3>To</h3>
-              <h5><%= @offer.destination.city_name %></h5>
-              <h3>Outbound</h3>
-              <h5><%= @offer.destination.flight.start_date %> / <%= @offer.destination.flight.departure_start %></h5>
-              <h3>Inbound</h3>
-              <h5><%= @offer.destination.flight.end_date %> / <%= @offer.destination.flight.departure_end %></h5>
+              <h3>Flight Number</h3>
+              <h5><%= @offer.destination.flight.flight_number %></h5>
               <h3>Number of passengers</h3>
               <h5><%= current_user.definition.travellers %></h5>
+            </div>
+
+            <div class="info2">
+              <div class="info2-locations">
+                <div>
+                  <h3>From</h3>
+                  <h5><%= current_user.location %></h5>
+                </div>
+
+                <div>
+                  <h3>To</h3>
+                  <h5><%= @offer.destination.city_name %></h5>
+                </div>
+              </div>
+
+              <h5 class="mb-4"><%= @offer.destination.flight.start_date %> / <%= @offer.destination.flight.departure_start %></h5>
+
+              <div class="info2-locations">
+                <div>
+                  <h3>From</h3>
+                  <h5><%= @offer.destination.city_name %></h5>
+                </div>
+
+                <div>
+                  <h3>To</h3>
+                  <h5><%= current_user.location %></h5>
+                </div>
+              </div>
+
+              <h5><%= @offer.destination.flight.end_date %> / <%= @offer.destination.flight.departure_end %></h5>
             </div>
           </div>
         </div>
       </div>
 
       <div class="flight-offer-card-content-button">
-        <%= link_to "Book Flight", booking_path(@booking),
+        <%= link_to "Book", booking_path(@booking),
               class: "btn button-primary",
               method: :put,
               id: 'btn-flight',
               data: { style: "expand-right" } %>
       </div>
+    </div>
 
-      <div class="accommodation-offer-card-title row justify-content-start ml-1 mb-4">
-        <i class="fas fa-home"></i>
-        <h2 class="ml-3 mt-3">Your Accommodation</h2>
-      </div>
+    <div class="accommodation-offer-card-title row justify-content-start ml-1 mb-2">
+      <i class="fas fa-home"></i>
+      <h2 class="ml-3 mt-3">Your Accommodation</h2>
+    </div>
+
+    <div class="grids">
       <div class="card offers-cards col-12 col-lg-10">
         <div class="accommodation-offer-card">
-          <div class="accommodation-offer-card-content d-flex">
-            <div class="accommodation-offer-card-content-image">
-              <%= image_tag @offer.destination.accommodation.room %>
-            </div>
-            <div class="accommodation-offer-card-content-text">
+          <div class="accommodation-offer-card-content-image">
+            <%= image_tag @offer.destination.accommodation.room %>
+          </div>
+
+          <div class="acommodation-ofer-card-infos">
+            <div class="info1">
               <h3>Platform</h3>
               <h5><%= @offer.destination.accommodation.platform %></h5>
-              <h3>Location</h3>
+              <h3>Hotel</h3>
               <h5><%= @offer.destination.accommodation.name %></h5>
               <h3>Address</h3>
               <h5><%= @offer.destination.accommodation.address %></h5>
+            </div>
+
+            <div class="info1">
               <h3>Check in</h3>
               <h5><%= @offer.destination.accommodation.check_in %></h5>
               <h3>Check out</h3>
@@ -90,11 +124,11 @@
       </div>
 
       <div class="accommodation-offer-card-content-button" data-show-link="<%= destination_offer_booking_path(@offer.destination, @offer, @booking) %>">
-        <%= link_to "Book Accommodation", booking_path(@booking),
-              class: "btn button-primary",
-              method: :put,
-              id: 'btn-hotel',
-              data: { style: "expand-right" } %>
+        <%= link_to "Book", booking_path(@booking),
+          class: "btn button-primary",
+          method: :put,
+          id: 'btn-hotel',
+          data: { style: "expand-right" } %>
       </div>
     </div>
   </div>
