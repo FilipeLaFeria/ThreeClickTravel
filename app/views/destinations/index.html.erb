@@ -53,7 +53,8 @@
   </div>
 
   <div class="buttons">
-    <%= link_to "<< Back", root_path, class: "button-secondary" %>
+    <%= link_to "<< Back", root_path, class: "button-primary" %>
+    
     <% if params[:param1] != 'btn-all-destinations' %>
 
       <%= link_to "MORE SUGGESTIONS", destinations_path(param1: 'btn-all-destinations'), class: "button-primary" %>
