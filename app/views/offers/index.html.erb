@@ -1,7 +1,4 @@
 <div class="main-container">
-  <div class="btn-back my-3">
-    <%= link_to "<< Back", :back, class: "back" %>
-  </div>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -12,11 +9,11 @@
               <p>Pick a Destination</p>
             </div>
           <% end %>
-          <div class="trail-circle done">
+          <div class="trail-circle doing">
             <h1>2</h1>
             <p>Select Flight & Accommodation</p>
           </div>
-          <div class="trail-circle doing">
+          <div class="trail-circle undone">
             <h1>3</h1>
             <p>Check Out</p>
           </div>
@@ -24,53 +21,68 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    <div id="header" style="margin-top: 8px; color:#D62828;">
+
+  <div class="offer-grid">
+
+    <div id="header" style="margin-top: 16px; color:#D62828;">
       <h2>Pick one offer</h2>
     </div>
-    <div class="row">
-      <div class="col-12 col-lg-6">
-      <% @offers.first(3).each do |offer| %>
-        <div class="card-grid">
-          <%= link_to new_destination_offer_booking_path(@destination, offer), class:'text-decoration-none' do %>
-          <div class="card-offer">
-            <%= image_tag offer.destination.accommodation.url %>
-            <div class="card-offer-infos">
-              <div class="card-offer-title">
-                <div class="card-offer-title-city">
-                  <h2><%= offer.destination.accommodation.name %></h2>
+
+    <div class="offers">
+
+      <div class="container">
+        <% @offers.first(3).each do |offer| %>
+          <div class="card-grid">
+            <%= link_to new_destination_offer_booking_path(@destination, offer), class:'text-decoration-none' do %>
+            <div class="card-offer">
+
+              <%= image_tag offer.destination.accommodation.url %>
+
+              <div class="card-offer-infos">
+
+                <div class="card-offer-title">
+                  <div class="card-offer-title-city">
+                    <h2><%= offer.destination.accommodation.name %></h2>
+                  </div>
+                </div>
+
+                <div class="card-offer-details">
+
+                  <div class="card-offer-flight">
+                    <p id="info-title">Flight</p>
+                    <p><%= offer.destination.flight.company %> - <%= offer.destination.flight.flight_number %></p>
+                    <p>Outbound:<br><%= offer.destination.flight.start_date %> - <%= offer.destination.flight.departure_start %></p>
+                    <p>Inbound:<br><%= offer.destination.flight.end_date %> - <%= offer.destination.flight.departure_end %></p>
+                    <p id="info-price"><strong>Price: <%= offer.destination.flight.price %>€</strong></p>
+                  </div>
+
+                  <div class="card-offer-accommodation">
+                    <p id="info-title">Accommodation</p>
+                    <p> <%= offer.destination.accommodation.address %> </p>
+                    <p>Check-in:<br><%= offer.destination.accommodation.check_in %></p>
+                    <p>Check-out:<br><%= offer.destination.accommodation.check_out %></p>
+                    <p id="info-price"><strong> Price: <%= offer.destination.accommodation.price %>€</strong></p>
+                  </div>
+
                 </div>
 
               </div>
-              <div class="card-offer-details">
-                <%# <%= image_tag 'flight_icon.png' %>
-                <div class="card-offer-flight">
-                  <p id="info-title">Flight</p>
-                  <p><%= offer.destination.flight.company %> - <%= offer.destination.flight.flight_number %></p>
-                  <p><%= offer.destination.flight.departure_start %> - <%= offer.destination.flight.duration %></p>
-                  <p id="info-price"><strong>Price: <%= offer.destination.flight.price %>€</strong></p>
-                </div>
-                <%# <%= image_tag 'flight_icon.png' %>
-                <div class="card-offer-accommodation">
-                  <p id="info-title">Accommodation</p>
-                  <p> <%= offer.destination.accommodation.address %> </p>
-                  <p> <%= offer.destination.accommodation.check_in %> (2 nights)</p>
-                  <p id="info-price"><strong> Price: <%= offer.destination.accommodation.price %>€</strong></p>
-                </div>
-              </div>
+
             </div>
+            <% end %>
           </div>
-          <% end %>
-        </div>
-      <% end %>
+        <% end %>
       </div>
-      <div class="col-12 col-lg-6">
+
+      <div class="container">
         <div id="map"
-          style="width: 100%; height: 480px;"
+          style="width: 480px; height: 632px;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
+
     </div>
+
   </div>
 </div>

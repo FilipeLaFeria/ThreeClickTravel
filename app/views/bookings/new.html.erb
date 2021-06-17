@@ -1,7 +1,5 @@
 <div class="main-container">
-  <div class="btn-back my-3">
-    <%= link_to "<< Back", :back, class: "back" %>
-  </div>
+
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -22,6 +20,7 @@
       </div>
     </div>
   </div>
+
   <div class="container">
     <div class="row justify-content-center">
       <div class="card offers-cards col-12 col-lg-5">
@@ -83,12 +82,12 @@
         </div>
       </div>
     </div>
-      <% if !@booking.nil? && @booking.status_accommodation && @booking.status_flight %>
-        <div class= "booking-buttons row justify-content-center">
-          <%= link_to destination_offer_booking_path(@offer.destination, @offer, @booking), class: "btn btn-flat" do %>
-            Check Out<i class="fas fa-forward"></i>
-          <% end %>
-        </div>
-      <% end %>
+    <% if !@booking.nil? && @booking.status_accommodation && @booking.status_flight %>
+      <div class= "booking-buttons row justify-content-center">
+        <%= link_to destination_offer_booking_path(@offer.destination, @offer, @booking), class: "button-primary" do %>
+          Check Out <i class="fas fa-forward"></i>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

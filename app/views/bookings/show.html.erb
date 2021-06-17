@@ -21,17 +21,17 @@
         </div>
 
         <div class="booking-card-button">
-          <%= link_to "https://en.wikipedia.org/wiki/#{@booking.offer.destination.city_name}", target: :_blank, class: 'btn btn-booking' do %>
+          <%= link_to "https://en.wikipedia.org/wiki/#{@booking.offer.destination.city_name}", target: :_blank, class: 'button-primary' do %>
             <i class="fas fa-info"></i> Discover more
           <% end %>
         </div>
         <div class="booking-card-button">
-          <%= link_to "https://www.timeout.com/#{@booking.offer.destination.city_name}/things-to-do/", target: :_blank, class: 'btn btn-booking' do %>
+          <%= link_to "https://www.timeout.com/#{@booking.offer.destination.city_name}/things-to-do/", target: :_blank, class: 'button-primary' do %>
             <i class="fas fa-landmark"></i> What to do
           <% end %>
         </div>
         <div class="booking-card-button">
-          <%= link_to "https://www.timeout.com/#{@booking.offer.destination.city_name}/restaurants/", target: :_blank, class: 'btn btn-booking' do %>
+          <%= link_to "https://www.timeout.com/#{@booking.offer.destination.city_name}/restaurants/", target: :_blank, class: 'button-primary' do %>
             <i class="fas fa-utensils"></i> Where to eat
           <% end %>
         </div>
@@ -49,17 +49,11 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-lg-6">
-      <div class="booking-card-button">
-        <%= link_to "Make a new booking", root_path, class: 'btn btn-booking' %>
-      </div>
-    </div>
-    <div class="col-12 col-lg-6">
-      <div class="booking-card-button">
-        <%= link_to "My bookings", bookings_path, class: 'btn btn-booking' %>
-      </div>
-    </div>
+<div class="buttons">
+  <div class="booking-card-button">
+    <%= link_to "Make a new booking", root_path, class: 'button-primary' %>
+  </div>
+  <div class="booking-card-button">
+    <%= link_to "My bookings", bookings_path, class: 'button-primary' %>
   </div>
 </div>
