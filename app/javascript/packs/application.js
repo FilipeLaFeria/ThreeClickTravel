@@ -19,11 +19,13 @@ import "bootstrap";
 
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initButtons } from '../plugins/booking_buttons';
 
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   initMapbox();
+  initButtons();
 });
 
 

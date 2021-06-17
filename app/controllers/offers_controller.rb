@@ -1,10 +1,7 @@
 class OffersController < ApplicationController
   before_action :generate_offers, only: :index
   def index
-    @destination = Destination.find(params[:destination_id])
-    #aqui codigo
-    @offers = Offer.where(destination: @destination)
-
+    @offers = Offer.all
     @markers = @offers.geocoded.map do |offer|
       {
         lat: offer.latitude,
@@ -18,7 +15,7 @@ class OffersController < ApplicationController
   private
 
   def generate_offers
-
+    Offer.destroy_all
     @destination = Destination.find(params[:destination_id])
     budget = current_user.definition.budget
     interval = (budget - budget * 0.2)..(budget + budget * 0.2)
