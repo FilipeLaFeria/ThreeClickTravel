@@ -101,7 +101,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 8px 16px;
+  padding: 10px 16px;
 }
 
 .card-offer-details {
@@ -219,7 +219,7 @@
   justify-content: center;
 }
 
-// DELETE CARDS
+// BOOKING CARDS
 
 .my_bookings {
   display: flex;
@@ -239,4 +239,11 @@
 .grids {
   display: flex;
   align-items: center;
+}
+
+.card-booking p {
+  font-size: 14px;
+  font-weight: light;
+  opacity: .7;
+  margin-bottom: 0;
 }

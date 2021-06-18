@@ -21,19 +21,15 @@
                 </div>
 
                 <div class="card-offer-details">
-                  <div class="card-offer-flight">
-                    <p id="info-title">Flight</p>
-                    <p><%= booking.offer.destination.flight.company %></p>
-                    <p><%= booking.offer.destination.flight.departure_start %> - <%= booking.offer.destination.flight.duration %></p>
-                    <p id="info-price"><strong>Price: <%= booking.offer.destination.flight.price %>€</strong></p>
+
+                  <div class="card-booking">
+                    <p>Start: <%= booking.offer.destination.flight.start_date %></p>
+                    <p>End: <%= booking.offer.destination.flight.end_date %></p>
+                    <p>Flight: <%= booking.offer.destination.flight.company %> - <%= booking.offer.destination.flight.flight_number %> | <%= booking.offer.destination.flight.departure_start %></p>
+                    <p>Hotel: <%= booking.offer.destination.accommodation.name %>, <%= booking.offer.destination.accommodation.address %></p>
+                    <h4>Total Price: <%= booking.offer.destination.total_price %>€</h4>
                   </div>
 
-                  <div class="card-offer-accommodation">
-                    <p id="info-title">Accommodation</p>
-                    <p> <%= booking.offer.destination.accommodation.address %> </p>
-                    <p> <%= booking.offer.destination.accommodation.check_in %> (2 nights)</p>
-                    <p id="info-price"><strong> Price: <%= booking.offer.destination.accommodation.price %>€</strong></p>
-                  </div>
                 </div>
               </div>
 
