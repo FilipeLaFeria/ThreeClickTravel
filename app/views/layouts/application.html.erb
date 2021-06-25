@@ -2,7 +2,14 @@
 <html>
   <head>
     <title>Three Clicks Travel</title>
-    <meta property="og:image" content="app/assets/images/Facebook.png"/>
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="Three Clicks Travel" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= image_url('Facebook.png') %>" />
+    <meta property="og:description" content="Your next destination, three clicks away." />
+    <meta property="og:site_name" content="Three Clicks Travel" />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
